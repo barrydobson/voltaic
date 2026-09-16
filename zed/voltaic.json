@@ -43,9 +43,9 @@
         "text.disabled": "#52525b",
         "text.accent": "#a3e635",
         "icon": "#a3e635",
-        "icon.muted": "#787881",
-        "icon.disabled": "#3f3f46",
-        "icon.placeholder": "#787881",
+        "icon.muted": "#a1a1aa",
+        "icon.disabled": "#52525b",
+        "icon.placeholder": "#a1a1aa",
         "icon.accent": "#c8ff00",
         "status_bar.background": "#09090b",
         "title_bar.background": "#09090b",
@@ -401,7 +401,7 @@
             "color": "#d4d4d8"
           },
           "property": {
-            "color": "#b9a58c"
+            "color": "#7aa2f7"
           },
           "punctuation": {
             "color": "#787881"
@@ -564,9 +564,9 @@
         "text.disabled": "#a1a1aa",
         "text.accent": "#3f6212",
         "icon": "#3f6212",
-        "icon.muted": "#6c6c75",
-        "icon.disabled": "#d4d4d8",
-        "icon.placeholder": "#6c6c75",
+        "icon.muted": "#52525b",
+        "icon.disabled": "#a1a1aa",
+        "icon.placeholder": "#52525b",
         "icon.accent": "#4c790f",
         "status_bar.background": "#f0efed",
         "title_bar.background": "#f0efed",
@@ -599,8 +599,8 @@
         "editor.background": "#faf9f7",
         "editor.gutter.background": "#faf9f7",
         "editor.subheader.background": "#ffffff",
-        "editor.active_line.background": "#f0efed",
-        "editor.highlighted_line.background": "#f0efed",
+        "editor.active_line.background": "#e4e4e7",
+        "editor.highlighted_line.background": "#e4e4e7",
         "editor.debugger_active_line.background": "#9c5f0733",
         "editor.line_number": "#a1a1aa",
         "editor.active_line_number": "#4c790f",
@@ -922,7 +922,7 @@
             "color": "#3f3f46"
           },
           "property": {
-            "color": "#92400e"
+            "color": "#1d4ed8"
           },
           "punctuation": {
             "color": "#6c6c75"

@@ -44,11 +44,15 @@ Two constraints are load-bearing, and `check.py` enforces the first:
 **Nothing readable sits on `heavy`.** At 50% over dark `base`, `volt` drops body
 text to 2.90:1. It is for marks and borders, never a background behind text.
 
-**In light, step the background tone rather than tinting it.** The top of the
-light monochrome ramp is compressed, so `overlay` at any step composites to
-within a hair of `base` and the highlight simply does not show. Put `base` on a
-`deep` canvas for the active line instead, and keep tints for the accents, where
-there is enough separation for them to register.
+**In light, tint with a foreground tone or step the background, never tint with a
+background tone.** `overlay` at any alpha composites to within a hair of `base`,
+because the top of the light ramp is compressed. Two things that do work: `text`
+at `faint`, or `overlay` as an opaque fill. The active line uses the latter, a
+1.21:1 step off the `deep` canvas.
+
+Expect that band. A light-theme active line lands somewhere around 1.1-1.3:1
+whichever technique is used, and Catppuccin Latte sits at 1.11:1 doing the same
+job with `text` at 7%. It is a genre constraint, not a defect to engineer away.
 
 ## Typography
 
@@ -146,7 +150,8 @@ divergence, not an oversight.
 | Functions, methods | `blue` | <img src="../assets/palette/circles/dark-blue.png" width="16" height="16" alt=""/> <img src="../assets/palette/circles/light-blue.png" width="16" height="16" alt=""/> |
 | Types, classes, constructors | `cyan` | <img src="../assets/palette/circles/dark-cyan.png" width="16" height="16" alt=""/> <img src="../assets/palette/circles/light-cyan.png" width="16" height="16" alt=""/> |
 | Operators | `ice` | <img src="../assets/palette/circles/dark-ice.png" width="16" height="16" alt=""/> <img src="../assets/palette/circles/light-ice.png" width="16" height="16" alt=""/> |
-| Properties, struct members | `bronze` | <img src="../assets/palette/circles/dark-bronze.png" width="16" height="16" alt=""/> <img src="../assets/palette/circles/light-bronze.png" width="16" height="16" alt=""/> |
+| Object properties, config keys | `blue` | <img src="../assets/palette/circles/dark-bronze.png" width="16" height="16" alt=""/> <img src="../assets/palette/circles/light-bronze.png" width="16" height="16" alt=""/> |
+| Struct fields, members | `bronze` |
 | Variables, identifiers | `text` | <img src="../assets/palette/circles/dark-text.png" width="16" height="16" alt=""/> <img src="../assets/palette/circles/light-text.png" width="16" height="16" alt=""/> |
 | Namespaces, modules | `jade` | <img src="../assets/palette/circles/dark-jade.png" width="16" height="16" alt=""/> <img src="../assets/palette/circles/light-jade.png" width="16" height="16" alt=""/> |
 | Tags | `ember` | <img src="../assets/palette/circles/dark-ember.png" width="16" height="16" alt=""/> <img src="../assets/palette/circles/light-ember.png" width="16" height="16" alt=""/> |
@@ -168,9 +173,11 @@ blue band is already full with `cyan`, `blue` and `teal` and a fourth entry cann
 clear AA while staying distinguishable from all three. Operators are punctuation
 more than they are words, so going neutral costs less than going unreadable.
 
-`bronze` and `amber` sit next to each other constantly, in expressions like
-`config.timeout = MAX`. They are separated to dE 12.7 to stay legible as distinct
-roles. Do not nudge either toward the other when porting.
+Config keys are `blue`, not `bronze`. In a JSON or YAML file every key is a
+`property`, so putting properties on `bronze` leaves whole files rendering in two
+colours against `jade` strings. `bronze` keeps struct fields and members, where it
+sits beside `amber` constants often enough to need the dE 12.7 separation between
+them. Do not nudge either toward the other when porting.
 
 ## Markup
 

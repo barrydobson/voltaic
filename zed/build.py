@@ -39,11 +39,12 @@ SYNTAX = {
               "comment.warn", "comment.warning"],
     "blue": ["function", "function.builtin", "function.call", "function.method",
              "function.method.call", "function.decorator", "function.macro",
-             "link_text", "comment.todo", "comment.note", "comment.info"],
+             "link_text", "comment.todo", "comment.note", "comment.info",
+             "property"],
     "cyan": ["type", "type.builtin", "type.definition", "type.class.definition",
              "type.interface", "type.super", "constructor", "enum", "link_uri"],
     "ice": ["operator", "selector.pseudo"],
-    "bronze": ["property", "field", "variable.member"],
+    "bronze": ["field", "variable.member"],
     "violet": ["preproc", "concept"],
     "text": ["variable", "embedded", "primary", "text", "symbol", "parameter",
              "variable.parameter", "parent"],
@@ -67,8 +68,9 @@ def style(palette, flavour):
         return core.rgba(c[name], a[step])
 
     # The light ramp is compressed at the top, so tinting the active line with
-    # `overlay` would not show. Step the background tone instead.
-    active_line = tint("overlay", "veil") if dark else c["base"]
+    # `overlay` would not show. Step the background tone instead, and step it as
+    # far as the ramp allows: `base` is only 1.09:1 off the editor canvas.
+    active_line = tint("overlay", "veil") if dark else c["overlay"]
 
     s = {
         "background.appearance": "opaque",
@@ -102,9 +104,9 @@ def style(palette, flavour):
         "text.disabled": c["dim"],
         "text.accent": c["arc"],
         "icon": c["arc"],
-        "icon.muted": c["subtle"],
-        "icon.disabled": c["muted"],
-        "icon.placeholder": c["subtle"],
+        "icon.muted": c["soft"],
+        "icon.disabled": c["dim"],
+        "icon.placeholder": c["soft"],
         "icon.accent": c["volt"],
 
         "status_bar.background": c["base"],
