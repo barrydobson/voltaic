@@ -1,0 +1,919 @@
+{
+  "name": "Voltaic",
+  "author": "Barry Dobson",
+  "licence": "MIT",
+  "flavours": {
+    "dark": {
+      "name": "Voltaic Dark",
+      "appearance": "dark",
+      "colours": {
+        "volt": {
+          "hex": "#c8ff00",
+          "rgb": [
+            200,
+            255,
+            0
+          ],
+          "hsl": [
+            73,
+            100,
+            50
+          ],
+          "accent": true,
+          "order": 0,
+          "role": "Signature accent: keywords, cursor, focus ring"
+        },
+        "arc": {
+          "hex": "#a3e635",
+          "rgb": [
+            163,
+            230,
+            53
+          ],
+          "hsl": [
+            83,
+            78,
+            55
+          ],
+          "accent": true,
+          "order": 1,
+          "role": "Accent text and icons, shimmer"
+        },
+        "lime": {
+          "hex": "#a3e635",
+          "rgb": [
+            163,
+            230,
+            53
+          ],
+          "hsl": [
+            83,
+            78,
+            55
+          ],
+          "accent": true,
+          "order": 2,
+          "role": "Bright green"
+        },
+        "jade": {
+          "hex": "#10b981",
+          "rgb": [
+            16,
+            185,
+            129
+          ],
+          "hsl": [
+            160,
+            84,
+            39
+          ],
+          "accent": true,
+          "order": 3,
+          "role": "Strings, namespaces, success"
+        },
+        "ember": {
+          "hex": "#f7768e",
+          "rgb": [
+            247,
+            118,
+            142
+          ],
+          "hsl": [
+            349,
+            89,
+            72
+          ],
+          "accent": true,
+          "order": 4,
+          "role": "Errors, numbers, deletions, tags"
+        },
+        "flare": {
+          "hex": "#ff9e9e",
+          "rgb": [
+            255,
+            158,
+            158
+          ],
+          "hsl": [
+            0,
+            100,
+            81
+          ],
+          "accent": true,
+          "order": 5,
+          "role": "Bright red"
+        },
+        "amber": {
+          "hex": "#e0af68",
+          "rgb": [
+            224,
+            175,
+            104
+          ],
+          "hsl": [
+            36,
+            66,
+            64
+          ],
+          "accent": true,
+          "order": 6,
+          "role": "Warnings, constants, modified"
+        },
+        "gold": {
+          "hex": "#e0af68",
+          "rgb": [
+            224,
+            175,
+            104
+          ],
+          "hsl": [
+            36,
+            66,
+            64
+          ],
+          "accent": true,
+          "order": 7,
+          "role": "Bright yellow"
+        },
+        "bronze": {
+          "hex": "#b9a58c",
+          "rgb": [
+            185,
+            165,
+            140
+          ],
+          "hsl": [
+            33,
+            24,
+            64
+          ],
+          "accent": true,
+          "order": 8,
+          "role": "Properties, struct members"
+        },
+        "blue": {
+          "hex": "#7aa2f7",
+          "rgb": [
+            122,
+            162,
+            247
+          ],
+          "hsl": [
+            221,
+            89,
+            72
+          ],
+          "accent": true,
+          "order": 9,
+          "role": "Functions, info, directories"
+        },
+        "sky": {
+          "hex": "#a9c4ff",
+          "rgb": [
+            169,
+            196,
+            255
+          ],
+          "hsl": [
+            221,
+            100,
+            83
+          ],
+          "accent": true,
+          "order": 10,
+          "role": "Bright blue"
+        },
+        "cyan": {
+          "hex": "#2ac3de",
+          "rgb": [
+            42,
+            195,
+            222
+          ],
+          "hsl": [
+            189,
+            73,
+            52
+          ],
+          "accent": true,
+          "order": 11,
+          "role": "Types, constructors, enums"
+        },
+        "ice": {
+          "hex": "#89ddff",
+          "rgb": [
+            137,
+            221,
+            255
+          ],
+          "hsl": [
+            197,
+            100,
+            77
+          ],
+          "accent": true,
+          "order": 12,
+          "role": "Operators"
+        },
+        "teal": {
+          "hex": "#73daca",
+          "rgb": [
+            115,
+            218,
+            202
+          ],
+          "hsl": [
+            171,
+            58,
+            65
+          ],
+          "accent": true,
+          "order": 13,
+          "role": "Links, symlinks, filters"
+        },
+        "aqua": {
+          "hex": "#73daca",
+          "rgb": [
+            115,
+            218,
+            202
+          ],
+          "hsl": [
+            171,
+            58,
+            65
+          ],
+          "accent": true,
+          "order": 14,
+          "role": "Bright cyan"
+        },
+        "violet": {
+          "hex": "#bb9af7",
+          "rgb": [
+            187,
+            154,
+            247
+          ],
+          "hsl": [
+            261,
+            85,
+            79
+          ],
+          "accent": true,
+          "order": 15,
+          "role": "Preprocessor, merge conflicts"
+        },
+        "lilac": {
+          "hex": "#d4bff0",
+          "rgb": [
+            212,
+            191,
+            240
+          ],
+          "hsl": [
+            266,
+            62,
+            85
+          ],
+          "accent": true,
+          "order": 16,
+          "role": "Bright magenta"
+        },
+        "base": {
+          "hex": "#09090b",
+          "rgb": [
+            9,
+            9,
+            11
+          ],
+          "hsl": [
+            240,
+            10,
+            4
+          ],
+          "accent": false,
+          "order": 17,
+          "role": "App background"
+        },
+        "deep": {
+          "hex": "#0c0a09",
+          "rgb": [
+            12,
+            10,
+            9
+          ],
+          "hsl": [
+            20,
+            14,
+            4
+          ],
+          "accent": false,
+          "order": 18,
+          "role": "Editor / terminal background"
+        },
+        "surface": {
+          "hex": "#18181b",
+          "rgb": [
+            24,
+            24,
+            27
+          ],
+          "hsl": [
+            240,
+            6,
+            10
+          ],
+          "accent": false,
+          "order": 19,
+          "role": "Panels, dialogs, elevated surfaces"
+        },
+        "overlay": {
+          "hex": "#27272a",
+          "rgb": [
+            39,
+            39,
+            42
+          ],
+          "hsl": [
+            240,
+            4,
+            16
+          ],
+          "accent": false,
+          "order": 20,
+          "role": "Borders, hover, active row"
+        },
+        "muted": {
+          "hex": "#3f3f46",
+          "rgb": [
+            63,
+            63,
+            70
+          ],
+          "hsl": [
+            240,
+            5,
+            26
+          ],
+          "accent": false,
+          "order": 21,
+          "role": "Indent guides, disabled icons"
+        },
+        "dim": {
+          "hex": "#52525b",
+          "rgb": [
+            82,
+            82,
+            91
+          ],
+          "hsl": [
+            240,
+            5,
+            34
+          ],
+          "accent": false,
+          "order": 22,
+          "role": "Placeholders, disabled text, line numbers"
+        },
+        "subtle": {
+          "hex": "#787881",
+          "rgb": [
+            120,
+            120,
+            129
+          ],
+          "hsl": [
+            240,
+            4,
+            49
+          ],
+          "accent": false,
+          "order": 23,
+          "role": "Comments, punctuation, ignored files"
+        },
+        "soft": {
+          "hex": "#a1a1aa",
+          "rgb": [
+            161,
+            161,
+            170
+          ],
+          "hsl": [
+            240,
+            5,
+            65
+          ],
+          "accent": false,
+          "order": 24,
+          "role": "Secondary text, hints"
+        },
+        "text": {
+          "hex": "#d4d4d8",
+          "rgb": [
+            212,
+            212,
+            216
+          ],
+          "hsl": [
+            240,
+            5,
+            84
+          ],
+          "accent": false,
+          "order": 25,
+          "role": "Primary text"
+        },
+        "bright": {
+          "hex": "#fafafa",
+          "rgb": [
+            250,
+            250,
+            250
+          ],
+          "hsl": [
+            0,
+            0,
+            98
+          ],
+          "accent": false,
+          "order": 26,
+          "role": "Emphasised text, bright white"
+        }
+      },
+      "ansi": {
+        "black": "deep",
+        "red": "ember",
+        "green": "volt",
+        "yellow": "amber",
+        "blue": "blue",
+        "magenta": "violet",
+        "cyan": "teal",
+        "white": "text",
+        "bright_black": "subtle",
+        "bright_red": "flare",
+        "bright_green": "lime",
+        "bright_yellow": "gold",
+        "bright_blue": "sky",
+        "bright_magenta": "lilac",
+        "bright_cyan": "aqua",
+        "bright_white": "bright"
+      }
+    },
+    "light": {
+      "name": "Voltaic Light",
+      "appearance": "light",
+      "colours": {
+        "volt": {
+          "hex": "#4c790f",
+          "rgb": [
+            76,
+            121,
+            15
+          ],
+          "hsl": [
+            85,
+            78,
+            27
+          ],
+          "accent": true,
+          "order": 0,
+          "role": "Signature accent: keywords, cursor, focus ring"
+        },
+        "arc": {
+          "hex": "#3f6212",
+          "rgb": [
+            63,
+            98,
+            18
+          ],
+          "hsl": [
+            86,
+            69,
+            23
+          ],
+          "accent": true,
+          "order": 1,
+          "role": "Accent text and icons, shimmer"
+        },
+        "lime": {
+          "hex": "#5e980c",
+          "rgb": [
+            94,
+            152,
+            12
+          ],
+          "hsl": [
+            85,
+            85,
+            32
+          ],
+          "accent": true,
+          "order": 2,
+          "role": "Bright green"
+        },
+        "jade": {
+          "hex": "#047857",
+          "rgb": [
+            4,
+            120,
+            87
+          ],
+          "hsl": [
+            163,
+            94,
+            24
+          ],
+          "accent": true,
+          "order": 3,
+          "role": "Strings, namespaces, success"
+        },
+        "ember": {
+          "hex": "#be123c",
+          "rgb": [
+            190,
+            18,
+            60
+          ],
+          "hsl": [
+            345,
+            83,
+            41
+          ],
+          "accent": true,
+          "order": 4,
+          "role": "Errors, numbers, deletions, tags"
+        },
+        "flare": {
+          "hex": "#e11d48",
+          "rgb": [
+            225,
+            29,
+            72
+          ],
+          "hsl": [
+            347,
+            77,
+            50
+          ],
+          "accent": true,
+          "order": 5,
+          "role": "Bright red"
+        },
+        "amber": {
+          "hex": "#9c5f07",
+          "rgb": [
+            156,
+            95,
+            7
+          ],
+          "hsl": [
+            35,
+            91,
+            32
+          ],
+          "accent": true,
+          "order": 6,
+          "role": "Warnings, constants, modified"
+        },
+        "gold": {
+          "hex": "#b77d04",
+          "rgb": [
+            183,
+            125,
+            4
+          ],
+          "hsl": [
+            41,
+            96,
+            37
+          ],
+          "accent": true,
+          "order": 7,
+          "role": "Bright yellow"
+        },
+        "bronze": {
+          "hex": "#92400e",
+          "rgb": [
+            146,
+            64,
+            14
+          ],
+          "hsl": [
+            23,
+            82,
+            31
+          ],
+          "accent": true,
+          "order": 8,
+          "role": "Properties, struct members"
+        },
+        "blue": {
+          "hex": "#1d4ed8",
+          "rgb": [
+            29,
+            78,
+            216
+          ],
+          "hsl": [
+            224,
+            76,
+            48
+          ],
+          "accent": true,
+          "order": 9,
+          "role": "Functions, info, directories"
+        },
+        "sky": {
+          "hex": "#3b82f6",
+          "rgb": [
+            59,
+            130,
+            246
+          ],
+          "hsl": [
+            217,
+            91,
+            60
+          ],
+          "accent": true,
+          "order": 10,
+          "role": "Bright blue"
+        },
+        "cyan": {
+          "hex": "#0e7490",
+          "rgb": [
+            14,
+            116,
+            144
+          ],
+          "hsl": [
+            193,
+            82,
+            31
+          ],
+          "accent": true,
+          "order": 11,
+          "role": "Types, constructors, enums"
+        },
+        "ice": {
+          "hex": "#0891b2",
+          "rgb": [
+            8,
+            145,
+            178
+          ],
+          "hsl": [
+            192,
+            91,
+            36
+          ],
+          "accent": true,
+          "order": 12,
+          "role": "Operators"
+        },
+        "teal": {
+          "hex": "#0f766e",
+          "rgb": [
+            15,
+            118,
+            110
+          ],
+          "hsl": [
+            175,
+            77,
+            26
+          ],
+          "accent": true,
+          "order": 13,
+          "role": "Links, symlinks, filters"
+        },
+        "aqua": {
+          "hex": "#11998a",
+          "rgb": [
+            17,
+            153,
+            138
+          ],
+          "hsl": [
+            173,
+            80,
+            33
+          ],
+          "accent": true,
+          "order": 14,
+          "role": "Bright cyan"
+        },
+        "violet": {
+          "hex": "#7c3aed",
+          "rgb": [
+            124,
+            58,
+            237
+          ],
+          "hsl": [
+            262,
+            83,
+            58
+          ],
+          "accent": true,
+          "order": 15,
+          "role": "Preprocessor, merge conflicts"
+        },
+        "lilac": {
+          "hex": "#8b5cf6",
+          "rgb": [
+            139,
+            92,
+            246
+          ],
+          "hsl": [
+            258,
+            90,
+            66
+          ],
+          "accent": true,
+          "order": 16,
+          "role": "Bright magenta"
+        },
+        "base": {
+          "hex": "#f0efed",
+          "rgb": [
+            240,
+            239,
+            237
+          ],
+          "hsl": [
+            40,
+            9,
+            94
+          ],
+          "accent": false,
+          "order": 17,
+          "role": "App background"
+        },
+        "deep": {
+          "hex": "#faf9f7",
+          "rgb": [
+            250,
+            249,
+            247
+          ],
+          "hsl": [
+            40,
+            23,
+            97
+          ],
+          "accent": false,
+          "order": 18,
+          "role": "Editor / terminal background"
+        },
+        "surface": {
+          "hex": "#ffffff",
+          "rgb": [
+            255,
+            255,
+            255
+          ],
+          "hsl": [
+            0,
+            0,
+            100
+          ],
+          "accent": false,
+          "order": 19,
+          "role": "Panels, dialogs, elevated surfaces"
+        },
+        "overlay": {
+          "hex": "#e4e4e7",
+          "rgb": [
+            228,
+            228,
+            231
+          ],
+          "hsl": [
+            240,
+            6,
+            90
+          ],
+          "accent": false,
+          "order": 20,
+          "role": "Borders, hover, active row"
+        },
+        "muted": {
+          "hex": "#d4d4d8",
+          "rgb": [
+            212,
+            212,
+            216
+          ],
+          "hsl": [
+            240,
+            5,
+            84
+          ],
+          "accent": false,
+          "order": 21,
+          "role": "Indent guides, disabled icons"
+        },
+        "dim": {
+          "hex": "#a1a1aa",
+          "rgb": [
+            161,
+            161,
+            170
+          ],
+          "hsl": [
+            240,
+            5,
+            65
+          ],
+          "accent": false,
+          "order": 22,
+          "role": "Placeholders, disabled text, line numbers"
+        },
+        "subtle": {
+          "hex": "#6c6c75",
+          "rgb": [
+            108,
+            108,
+            117
+          ],
+          "hsl": [
+            240,
+            4,
+            44
+          ],
+          "accent": false,
+          "order": 23,
+          "role": "Comments, punctuation, ignored files"
+        },
+        "soft": {
+          "hex": "#52525b",
+          "rgb": [
+            82,
+            82,
+            91
+          ],
+          "hsl": [
+            240,
+            5,
+            34
+          ],
+          "accent": false,
+          "order": 24,
+          "role": "Secondary text, hints"
+        },
+        "text": {
+          "hex": "#3f3f46",
+          "rgb": [
+            63,
+            63,
+            70
+          ],
+          "hsl": [
+            240,
+            5,
+            26
+          ],
+          "accent": false,
+          "order": 25,
+          "role": "Primary text"
+        },
+        "bright": {
+          "hex": "#27272a",
+          "rgb": [
+            39,
+            39,
+            42
+          ],
+          "hsl": [
+            240,
+            4,
+            16
+          ],
+          "accent": false,
+          "order": 26,
+          "role": "Emphasised text, bright white"
+        }
+      },
+      "ansi": {
+        "black": "bright",
+        "red": "ember",
+        "green": "volt",
+        "yellow": "amber",
+        "blue": "blue",
+        "magenta": "violet",
+        "cyan": "teal",
+        "white": "soft",
+        "bright_black": "subtle",
+        "bright_red": "flare",
+        "bright_green": "lime",
+        "bright_yellow": "gold",
+        "bright_blue": "sky",
+        "bright_magenta": "lilac",
+        "bright_cyan": "aqua",
+        "bright_white": "text"
+      }
+    }
+  }
+}
