@@ -1,0 +1,35 @@
+# Voltaic Dark. Generated from palette.json, do not edit.
+
+background = #0c0a09
+foreground = #d4d4d8
+
+cursor-color = #c8ff00
+cursor-text = #0c0a09
+
+selection-background = #c8ff00
+selection-foreground = #0c0a09
+
+search-background = #323b07
+search-foreground = #d4d4d8
+search-selected-background = #c8ff00
+search-selected-foreground = #0c0a09
+
+split-divider-color = #27272a
+unfocused-split-fill = #09090b
+
+palette = 0=#0c0a09
+palette = 1=#f7768e
+palette = 2=#c8ff00
+palette = 3=#e0af68
+palette = 4=#7aa2f7
+palette = 5=#bb9af7
+palette = 6=#73daca
+palette = 7=#d4d4d8
+palette = 8=#787881
+palette = 9=#ff9e9e
+palette = 10=#a3e635
+palette = 11=#e0af68
+palette = 12=#a9c4ff
+palette = 13=#d4bff0
+palette = 14=#73daca
+palette = 15=#fafafa

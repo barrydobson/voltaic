@@ -1,0 +1,35 @@
+# Voltaic Light. Generated from palette.json, do not edit.
+
+background = #faf9f7
+foreground = #3f3f46
+
+cursor-color = #4c790f
+cursor-text = #faf9f7
+
+selection-background = #4c790f
+selection-foreground = #faf9f7
+
+search-background = #d7dfc9
+search-foreground = #3f3f46
+search-selected-background = #4c790f
+search-selected-foreground = #faf9f7
+
+split-divider-color = #e4e4e7
+unfocused-split-fill = #f0efed
+
+palette = 0=#27272a
+palette = 1=#be123c
+palette = 2=#4c790f
+palette = 3=#9c5f07
+palette = 4=#1d4ed8
+palette = 5=#7c3aed
+palette = 6=#0f766e
+palette = 7=#52525b
+palette = 8=#6c6c75
+palette = 9=#e11d48
+palette = 10=#5e980c
+palette = 11=#b77d04
+palette = 12=#3b82f6
+palette = 13=#8b5cf6
+palette = 14=#11998a
+palette = 15=#3f3f46
