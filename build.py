@@ -82,8 +82,10 @@ def render_readme(palette, text):
     out, flavour, accent, i = [], None, None, 0
     while i < len(lines):
         line = lines[i]
-        if line.startswith("### Voltaic "):
-            flavour = line.split()[-1].lower()
+        # Any heading closes the previous flavour's scope, so a `| Colour |` table
+        # elsewhere in the file is left alone rather than overwritten.
+        if line.startswith("#"):
+            flavour = line.split()[-1].lower() if line.startswith("### Voltaic ") else None
         if line.strip() == "Accents:":
             accent = True
         if line.strip() == "Monochrome ramp:":

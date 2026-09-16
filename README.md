@@ -204,18 +204,20 @@ The palette was reverse-engineered from the existing hand-maintained themes, whi
 had picked up colours that belong to no consistent family. These need a decision
 before the ports are generated:
 
-| Colour | Hex | RGB | HSL | Role |
-| --- | --- | --- | --- | --- |
-| <img src="assets/palette/circles/light-base.png" width="20" height="20" alt=""/> `base` | `#f0efed` | `rgb(240, 239, 237)` | `hsl(40, 9%, 94%)` | App background |
-| <img src="assets/palette/circles/light-deep.png" width="20" height="20" alt=""/> `deep` | `#faf9f7` | `rgb(250, 249, 247)` | `hsl(40, 23%, 97%)` | Editor / terminal background |
-| <img src="assets/palette/circles/light-surface.png" width="20" height="20" alt=""/> `surface` | `#ffffff` | `rgb(255, 255, 255)` | `hsl(0, 0%, 100%)` | Panels, dialogs, elevated surfaces |
-| <img src="assets/palette/circles/light-overlay.png" width="20" height="20" alt=""/> `overlay` | `#e4e4e7` | `rgb(228, 228, 231)` | `hsl(240, 6%, 90%)` | Borders, hover, active row |
-| <img src="assets/palette/circles/light-muted.png" width="20" height="20" alt=""/> `muted` | `#d4d4d8` | `rgb(212, 212, 216)` | `hsl(240, 5%, 84%)` | Indent guides, disabled icons |
-| <img src="assets/palette/circles/light-dim.png" width="20" height="20" alt=""/> `dim` | `#a1a1aa` | `rgb(161, 161, 170)` | `hsl(240, 5%, 65%)` | Placeholders, disabled text, line numbers |
-| <img src="assets/palette/circles/light-subtle.png" width="20" height="20" alt=""/> `subtle` | `#6c6c75` | `rgb(108, 108, 117)` | `hsl(240, 4%, 44%)` | Comments, punctuation, ignored files |
-| <img src="assets/palette/circles/light-soft.png" width="20" height="20" alt=""/> `soft` | `#52525b` | `rgb(82, 82, 91)` | `hsl(240, 5%, 34%)` | Secondary text, hints |
-| <img src="assets/palette/circles/light-text.png" width="20" height="20" alt=""/> `text` | `#3f3f46` | `rgb(63, 63, 70)` | `hsl(240, 5%, 26%)` | Primary text |
-| <img src="assets/palette/circles/light-bright.png" width="20" height="20" alt=""/> `bright` | `#27272a` | `rgb(39, 39, 42)` | `hsl(240, 4%, 16%)` | Emphasised text, bright white |
+| Hex | Where it appears | Resolution |
+| --- | --- | --- |
+| `#caea28` | Signature accent in every port | `volt`, `#c8ff00` |
+| `#71717a` | ANSI bright black, pipes, inactive and description text | `subtle` |
+| `#f59e0b` | Warnings in starship, herdr and claude | `amber` |
+| `#ff6b80` | Errors in herdr and claude | `ember` |
+| `#fcd34d` | Warning shimmer in claude | `gold` |
+| `#c0a36e` | Five syntax scopes in vscode | `bronze` |
+| `#6d28d9` | Light violet in vscode | `violet` |
+| `#f5f5f4` | Light tab bar background in vscode | `base` |
+| `#d97757` | Claude marker in starship | Anthropic brand orange, not a theme colour. `bronze`, or keep the literal |
+
+Regenerate with `rg -o '#[0-9a-fA-F]{6}' <theme file>` and compare against
+`palette.json`; anything not in it is either drift or a composited tint.
 
 Every port also predates the contrast fixes in `palette.json`, so the six light
 accents and two dark ones that moved will differ from what is currently installed.

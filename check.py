@@ -89,6 +89,12 @@ def check():
     if build.render_readme(palette, readme) != readme:
         errors.append("README.md: colour tables are stale, run ./build.py")
 
+    # Only the flavour tables are generated. A `| Colour |` table elsewhere, such
+    # as the drift list, is prose and used to be overwritten with a flavour ramp.
+    probe = readme + "## Probe\n\n| Colour | Hex |\n| --- | --- |\n| `x` | `y` |\n"
+    if build.render_readme(palette, probe) != probe:
+        errors.append("build.py: render_readme rewrites tables outside the flavour sections")
+
     for directory, module in build.ports():
         for name, content in module.generate(palette).items():
             path = directory / name
