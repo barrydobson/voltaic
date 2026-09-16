@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Validate palette.json: derived values match hex, ANSI resolves, contrast floors
 hold, and the generated swatches and README tables are current."""
-import colorsys, json, pathlib, sys
+import colorsys, json, pathlib, re, sys
 
 import build
 
@@ -12,6 +12,12 @@ PALETTE = pathlib.Path(__file__).parent / "palette.json"
 BRIGHT = {"lime", "gold", "aqua", "flare", "sky", "ice", "lilac"}
 # Backgrounds and deliberately low-emphasis tones (placeholders, line numbers).
 EXEMPT = {"base", "deep", "surface", "overlay", "muted", "dim"}
+
+# Tints the style guide recommends as backgrounds. Text sits on top of these, so
+# they have to survive being composited over base. `heavy` is absent on purpose:
+# at 50% it drops text below 3:1 on dark, so it is for marks and borders only.
+TINTED = [("volt", "tint"), ("volt", "veil"), ("overlay", "veil"),
+          ("ember", "tint"), ("jade", "tint")]
 
 
 def rgb(h):
@@ -56,6 +62,19 @@ def check():
             if target not in colours:
                 errors.append(f"{flavour}/ansi/{slot}: unknown colour '{target}'")
 
+        for name, step in TINTED:
+            tinted = build.composite(colours[name]["hex"], palette["alpha"][step], base)
+            ratio = contrast(colours["text"]["hex"], tinted)
+            if ratio < 4.5:
+                errors.append(f"{flavour}: text on {name} at {step} over base "
+                              f"({tinted}) is {ratio:.2f}:1, needs 4.5:1")
+
+    steps = list(palette["alpha"].values())
+    if steps != sorted(steps) or len(set(steps)) != len(steps):
+        errors.append("alpha: steps must be unique and ordered low to high")
+    if not all(0 < s < 1 for s in steps):
+        errors.append("alpha: steps must sit between 0 and 1 exclusive")
+
     for name, data in build.swatches(palette).items():
         path = build.CIRCLES / name
         if not path.exists():
@@ -69,6 +88,13 @@ def check():
     readme = build.README.read_text()
     if build.render_readme(palette, readme) != readme:
         errors.append("README.md: colour tables are stale, run ./build.py")
+
+    # Prose documents reference swatches by path, so a renamed or removed colour
+    # breaks them silently.
+    for doc in sorted(build.ROOT.glob("docs/*.md")):
+        for ref in set(re.findall(r"assets/palette/circles/([a-z0-9-]+\.png)", doc.read_text())):
+            if not (build.CIRCLES / ref).exists():
+                errors.append(f"{doc.relative_to(build.ROOT)}: references missing swatch {ref}")
 
     return errors
 

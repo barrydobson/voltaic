@@ -37,6 +37,22 @@ def circle_png(hexv):
             + chunk(b"IEND", b""))
 
 
+def rgba(hexv, alpha):
+    """8-digit hex, for ports that accept alpha directly."""
+    return f"{hexv}{round(alpha * 255):02x}"
+
+
+def composite(hexv, alpha, over):
+    """Flatten a translucent colour onto an opaque one, for ports with no alpha.
+
+    Blends in sRGB rather than linear light, matching what the editors and
+    terminals consuming these values actually do.
+    """
+    fg = [int(hexv[i:i + 2], 16) for i in (1, 3, 5)]
+    bg = [int(over[i:i + 2], 16) for i in (1, 3, 5)]
+    return "#%02x%02x%02x" % tuple(round(f * alpha + b * (1 - alpha)) for f, b in zip(fg, bg))
+
+
 def swatches(palette):
     """Every swatch this palette needs, as {relative path: png bytes}."""
     return {

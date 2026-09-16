@@ -2,6 +2,13 @@
   "name": "Voltaic",
   "author": "Barry Dobson",
   "licence": "MIT",
+  "alpha": {
+    "faint": 0.08,
+    "wash": 0.14,
+    "tint": 0.2,
+    "veil": 0.3,
+    "heavy": 0.5
+  },
   "flavours": {
     "dark": {
       "name": "Voltaic Dark",

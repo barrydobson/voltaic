@@ -6,6 +6,10 @@ across every application that supports custom colours.
 The palette in `palette.json` is the source of truth. Every per-application theme
 in this repo is derived from it. Change a colour there, regenerate the ports.
 
+The [style guide](docs/style-guide.md) says which colour does which job, so that a
+status bar in one app means what it means in another. Read it before writing a
+port.
+
 ## Flavours
 
 | Flavour | Background | Accent | Feel |
@@ -163,6 +167,9 @@ palette.json        Source of truth: both flavours, every colour, ANSI mapping
 build.py            Regenerates the swatches and the README colour tables
 check.py            Validates the palette and that the generated files are current
 README.md           This file
+LICENCE             MIT
+docs/
+  style-guide.md    Which colour to use for which job, when writing a port
 assets/palette/
   circles/          One 48px PNG swatch per colour, <flavour>-<name>.png
 <app>/              One directory per application
@@ -214,10 +221,10 @@ Every port also predates the contrast fixes in `palette.json`, so the six light
 accents and two dark ones that moved will differ from what is currently installed.
 That resolves itself when each port is generated.
 
-Diff and selection backgrounds are the real gap: they are accent colours tinted
-into the background, not palette entries. Either they get a derivation rule
-(accent at N% alpha over `base`) or they become named palette entries.
+Diff and selection backgrounds are resolved: they are accents composited over the
+background at one of the five steps in the
+[style guide](docs/style-guide.md#tints-and-overlays), not palette entries.
 
 ## Licence
 
-MIT
+[MIT](LICENCE)
