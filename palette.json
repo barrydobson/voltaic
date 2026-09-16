@@ -220,7 +220,7 @@
           ],
           "accent": true,
           "order": 12,
-          "role": "Operators"
+          "role": "Operators (neutral in light, where the blue band is full)"
         },
         "teal": {
           "hex": "#73daca",
@@ -663,20 +663,20 @@
           "role": "Types, constructors, enums"
         },
         "ice": {
-          "hex": "#0891b2",
+          "hex": "#52525b",
           "rgb": [
-            8,
-            145,
-            178
+            82,
+            82,
+            91
           ],
           "hsl": [
-            192,
-            91,
-            36
+            240,
+            5,
+            34
           ],
           "accent": true,
           "order": 12,
-          "role": "Operators"
+          "role": "Operators (neutral in light, where the blue band is full)"
         },
         "teal": {
           "hex": "#0f766e",

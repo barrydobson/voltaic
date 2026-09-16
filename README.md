@@ -42,7 +42,7 @@ Accents:
 | <img src="assets/palette/circles/dark-blue.png" width="20" height="20" alt=""/> `blue` | `#7aa2f7` | `rgb(122, 162, 247)` | `hsl(221, 89%, 72%)` | Functions, info, directories |
 | <img src="assets/palette/circles/dark-sky.png" width="20" height="20" alt=""/> `sky` | `#a9c4ff` | `rgb(169, 196, 255)` | `hsl(221, 100%, 83%)` | Bright blue |
 | <img src="assets/palette/circles/dark-cyan.png" width="20" height="20" alt=""/> `cyan` | `#2ac3de` | `rgb(42, 195, 222)` | `hsl(189, 73%, 52%)` | Types, constructors, enums |
-| <img src="assets/palette/circles/dark-ice.png" width="20" height="20" alt=""/> `ice` | `#89ddff` | `rgb(137, 221, 255)` | `hsl(197, 100%, 77%)` | Operators |
+| <img src="assets/palette/circles/dark-ice.png" width="20" height="20" alt=""/> `ice` | `#89ddff` | `rgb(137, 221, 255)` | `hsl(197, 100%, 77%)` | Operators (neutral in light, where the blue band is full) |
 | <img src="assets/palette/circles/dark-teal.png" width="20" height="20" alt=""/> `teal` | `#73daca` | `rgb(115, 218, 202)` | `hsl(171, 58%, 65%)` | Links, symlinks, filters |
 | <img src="assets/palette/circles/dark-aqua.png" width="20" height="20" alt=""/> `aqua` | `#73daca` | `rgb(115, 218, 202)` | `hsl(171, 58%, 65%)` | Bright cyan |
 | <img src="assets/palette/circles/dark-violet.png" width="20" height="20" alt=""/> `violet` | `#bb9af7` | `rgb(187, 154, 247)` | `hsl(261, 85%, 79%)` | Preprocessor, merge conflicts |
@@ -81,7 +81,7 @@ Accents:
 | <img src="assets/palette/circles/light-blue.png" width="20" height="20" alt=""/> `blue` | `#1d4ed8` | `rgb(29, 78, 216)` | `hsl(224, 76%, 48%)` | Functions, info, directories |
 | <img src="assets/palette/circles/light-sky.png" width="20" height="20" alt=""/> `sky` | `#3b82f6` | `rgb(59, 130, 246)` | `hsl(217, 91%, 60%)` | Bright blue |
 | <img src="assets/palette/circles/light-cyan.png" width="20" height="20" alt=""/> `cyan` | `#0e7490` | `rgb(14, 116, 144)` | `hsl(193, 82%, 31%)` | Types, constructors, enums |
-| <img src="assets/palette/circles/light-ice.png" width="20" height="20" alt=""/> `ice` | `#0891b2` | `rgb(8, 145, 178)` | `hsl(192, 91%, 36%)` | Operators |
+| <img src="assets/palette/circles/light-ice.png" width="20" height="20" alt=""/> `ice` | `#52525b` | `rgb(82, 82, 91)` | `hsl(240, 5%, 34%)` | Operators (neutral in light, where the blue band is full) |
 | <img src="assets/palette/circles/light-teal.png" width="20" height="20" alt=""/> `teal` | `#0f766e` | `rgb(15, 118, 110)` | `hsl(175, 77%, 26%)` | Links, symlinks, filters |
 | <img src="assets/palette/circles/light-aqua.png" width="20" height="20" alt=""/> `aqua` | `#11998a` | `rgb(17, 153, 138)` | `hsl(173, 80%, 33%)` | Bright cyan |
 | <img src="assets/palette/circles/light-violet.png" width="20" height="20" alt=""/> `violet` | `#7c3aed` | `rgb(124, 58, 237)` | `hsl(262, 83%, 58%)` | Preprocessor, merge conflicts |
@@ -138,8 +138,8 @@ both `#73daca`. They stay separate names because they diverge in light.
 ## Contrast
 
 Every colour that renders as text clears 4.5:1 against its flavour's `base`.
-The seven ANSI bright accents (`lime`, `gold`, `aqua`, `flare`, `sky`, `ice`,
-`lilac`) clear 3:1, the WCAG floor for emphasis and chrome rather than body text.
+The six ANSI bright accents (`lime`, `gold`, `aqua`, `flare`, `sky`, `lilac`)
+clear 3:1, the WCAG floor for emphasis and chrome rather than body text.
 Backgrounds and the deliberately quiet tones (`overlay`, `muted`, `dim`) are
 exempt, since low contrast is their job.
 

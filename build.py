@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Generate the palette swatches and the README colour tables from palette.json."""
-import json, pathlib, struct, zlib
+import importlib.util, json, pathlib, struct, zlib
 
 ROOT = pathlib.Path(__file__).parent
 PALETTE = ROOT / "palette.json"
@@ -98,6 +98,15 @@ def render_readme(palette, text):
     return "\n".join(out) + "\n"
 
 
+def ports():
+    """Port directories, each owning a build.py with generate(palette) -> {name: text}."""
+    for path in sorted(ROOT.glob("*/build.py")):
+        spec = importlib.util.spec_from_file_location(f"port_{path.parent.name}", path)
+        module = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(module)
+        yield path.parent, module
+
+
 def main():
     palette = json.loads(PALETTE.read_text())
     CIRCLES.mkdir(parents=True, exist_ok=True)
@@ -109,6 +118,10 @@ def main():
             stale.unlink()
     README.write_text(render_readme(palette, README.read_text()))
     print(f"{len(written)} swatches, README tables rebuilt")
+    for directory, module in ports():
+        for name, content in module.generate(palette).items():
+            (directory / name).write_text(content)
+            print(f"{directory.name}/{name}")
 
 
 if __name__ == "__main__":

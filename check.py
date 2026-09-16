@@ -9,7 +9,7 @@ PALETTE = pathlib.Path(__file__).parent / "palette.json"
 
 # ANSI bright slots are emphasis and chrome, not body text, so they sit at the
 # WCAG non-text floor. Everything else that renders as text sits at AA.
-BRIGHT = {"lime", "gold", "aqua", "flare", "sky", "ice", "lilac"}
+BRIGHT = {"lime", "gold", "aqua", "flare", "sky", "lilac"}
 # Backgrounds and deliberately low-emphasis tones (placeholders, line numbers).
 EXEMPT = {"base", "deep", "surface", "overlay", "muted", "dim"}
 
@@ -88,6 +88,14 @@ def check():
     readme = build.README.read_text()
     if build.render_readme(palette, readme) != readme:
         errors.append("README.md: colour tables are stale, run ./build.py")
+
+    for directory, module in build.ports():
+        for name, content in module.generate(palette).items():
+            path = directory / name
+            if not path.exists():
+                errors.append(f"{path.relative_to(build.ROOT)}: missing, run ./build.py")
+            elif path.read_text() != content:
+                errors.append(f"{path.relative_to(build.ROOT)}: stale, run ./build.py")
 
     # Prose documents reference swatches by path, so a renamed or removed colour
     # breaks them silently.

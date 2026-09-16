@@ -162,6 +162,12 @@ Editor selection is `volt` at roughly 15% over `base`, unlike the solid terminal
 fill, because an editor selection can span a whole screen and a solid accent that
 size is punishing.
 
+`ice` is the one colour that changes character between flavours. In dark it is a
+bright cyan; in light it is the same neutral grey as `soft`, because the light
+blue band is already full with `cyan`, `blue` and `teal` and a fourth entry cannot
+clear AA while staying distinguishable from all three. Operators are punctuation
+more than they are words, so going neutral costs less than going unreadable.
+
 `bronze` and `amber` sit next to each other constantly, in expressions like
 `config.timeout = MAX`. They are separated to dE 12.7 to stay legible as distinct
 roles. Do not nudge either toward the other when porting.
