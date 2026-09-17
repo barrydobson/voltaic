@@ -98,7 +98,7 @@
         "terminal.dim_foreground": "#a1a1aa",
         "link_text.hover": "#a3e635",
         "debugger.accent": "#f7768e",
-        "terminal.ansi.black": "#0c0a09",
+        "terminal.ansi.black": "#52525b",
         "terminal.ansi.red": "#f7768e",
         "terminal.ansi.green": "#c8ff00",
         "terminal.ansi.yellow": "#e0af68",

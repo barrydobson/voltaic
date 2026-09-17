@@ -109,7 +109,7 @@ by name, so a port never hardcodes a hex.
 
 | Slot | Dark | Light |
 | --- | --- | --- |
-| 0 black | `deep` | `bright` |
+| 0 black | `dim` | `bright` |
 | 1 red | `ember` | `ember` |
 | 2 green | `volt` | `volt` |
 | 3 yellow | `amber` | `amber` |
@@ -128,8 +128,11 @@ by name, so a port never hardcodes a hex.
 
 Both greyscale ends run dark in the light flavour. Taking slots 7 and 15 literally
 and mapping them to near-white makes anything printed as "white" invisible on a
-light background, so they map to `soft` and `text` instead. Slot 0 stays the
-darkest tone of all, which keeps black-on-default readable.
+light background, so they map to `soft` and `text` instead.
+
+Slot 0 is the darkest tone that is not the background. In light that is `bright`;
+in dark it is `dim` rather than `deep`, because `deep` is the terminal canvas and
+anything printed in it would be invisible.
 
 Some names collapse to the same hex within one flavour. In dark, `arc` and `lime`
 are both `#a3e635`, `amber` and `gold` are both `#e0af68`, `teal` and `aqua` are

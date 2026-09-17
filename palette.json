@@ -448,7 +448,7 @@
         }
       },
       "ansi": {
-        "black": "deep",
+        "black": "dim",
         "red": "ember",
         "green": "volt",
         "yellow": "amber",
