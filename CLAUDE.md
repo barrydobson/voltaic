@@ -36,8 +36,8 @@ Each `<app>/build.py` exposes `generate(palette) -> {filename: text}`; root
 install instructions. `docs/style-guide.md` decides which colour does which job —
 read it before writing a port.
 
-Nine so far: `claude` `eza` `ghostty` `herdr` `k9s` `obsidian` `starship`
-`vscode` `zed`.
+Ten so far: `atuin` `claude` `eza` `ghostty` `herdr` `k9s` `obsidian`
+`starship` `vscode` `zed`.
 
 ## Reference material
 

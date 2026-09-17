@@ -188,10 +188,11 @@ them and `check.py` fails if they have drifted.
 
 ## Ports
 
-Nine, each generated from `palette.json` by its own `build.py`:
+Ten, each generated from `palette.json` by its own `build.py`:
 
 | Port | Generates | Hand-maintained original |
 | --- | --- | --- |
+| [atuin](atuin/) | `voltaic-dark.toml`, `voltaic-light.toml` | none, new port |
 | [claude](claude/) | `voltaic-dark.json`, `voltaic-light.json` | `dotfiles/packages/claude/.claude/themes/` |
 | [eza](eza/) | `voltaic-dark.yml`, `voltaic-light.yml` | `dotfiles/packages/eza/.config/eza/theme.yml` |
 | [ghostty](ghostty/) | `voltaic-dark`, `voltaic-light` | `dotfiles/packages/ghostty/.config/ghostty/themes/` |
