@@ -38,8 +38,9 @@ read it before writing a port.
 
 ## Reference material
 
-- Hand-maintained originals: `~/_git/barrydobson/dotfiles/packages/{zed,k9s,ghostty,eza,starship,herdr,claude}/`
-  and `~/_git/barrydobson/vscode-theme-my-brand/themes/`. They predate the contrast
-  fixes, so they record *decisions*, not current values.
+- Hand-maintained originals: `~/_git/barrydobson/dotfiles/packages/{zed,k9s,ghostty,eza,starship,herdr,claude}/`.
+  They predate the contrast fixes, so they record *decisions*, not current values.
+  The VS Code original lived in a `vscode-theme-my-brand` repo, now retired; the
+  `vscode/` port records what it used to do under "Resolved drift".
 - Catppuccin is the structural reference for port layout and key coverage:
   `gh api repos/catppuccin/<port>/contents/<path> --jq '.content' | base64 -d`

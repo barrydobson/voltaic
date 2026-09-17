@@ -9,6 +9,11 @@ import build as core
 HERE = pathlib.Path(__file__).parent
 OUTPUT = {"dark": "voltaic-dark-color-theme.json",
           "light": "voltaic-light-color-theme.json"}
+MANIFEST = "package.json"
+
+# VS Code will not load a theme that is not part of an installed extension, so
+# this directory is the extension. Bump on each rebuild you intend to install.
+VERSION = "1.1.0"
 
 NONE = "#00000000"
 
@@ -805,9 +810,34 @@ def theme(palette, flavour):
     }
 
 
+def manifest(palette):
+    """The extension manifest, so `vsce package` runs in this directory."""
+    flavours = palette["flavours"]
+    return {
+        "name": f"{palette['name'].lower()}-theme",
+        "displayName": palette["name"],
+        "description": flavours["dark"]["name"] + " and " + flavours["light"]["name"]
+                       + ", generated from palette.json.",
+        "version": VERSION,
+        "publisher": "barrydobson",
+        "license": palette["licence"],
+        "repository": {"type": "git",
+                       "url": "https://github.com/barrydobson/voltaic.git"},
+        "engines": {"vscode": "^1.70.0"},
+        "categories": ["Themes"],
+        "contributes": {"themes": [
+            {"label": flavours[f]["name"],
+             "uiTheme": "vs-dark" if flavours[f]["appearance"] == "dark" else "vs",
+             "path": f"./{OUTPUT[f]}"}
+            for f in ("dark", "light")]},
+    }
+
+
 def generate(palette):
-    return {name: json.dumps(theme(palette, flavour), indent=2) + "\n"
-            for flavour, name in OUTPUT.items()}
+    out = {name: json.dumps(theme(palette, flavour), indent=2) + "\n"
+           for flavour, name in OUTPUT.items()}
+    out[MANIFEST] = json.dumps(manifest(palette), indent=2) + "\n"
+    return out
 
 
 if __name__ == "__main__":

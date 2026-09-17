@@ -6,16 +6,14 @@ Both flavours, as VS Code colour themes. Selectable as **Voltaic Dark** and
 VS Code accepts 8-digit hex everywhere, so the tint scale is applied directly
 rather than composited. Nothing in these files is flattened.
 
-The themes generated here are the source that
-[`vscode-theme-my-brand`](https://github.com/barrydobson/vscode-theme-my-brand)
-packages and publishes. That repo owns `package.json`, the icon and the
-marketplace listing; it owns no colours.
+Everything the extension needs is generated here: both theme files and the
+`package.json` that packages them. There is no separate extension repository.
 
 ## Install
 
-VS Code only loads a colour theme from an extension, and an extension has to be
-installed rather than dropped in place. Copy both files into
-`vscode-theme-my-brand/themes/`, then package and install from there:
+This directory is the extension. `build.py` writes `package.json` alongside the
+themes, so it packages and installs in place with no second repository and no
+hand-written manifest:
 
 ```sh
 npx @vscode/vsce package --no-dependencies
@@ -23,6 +21,9 @@ code --install-extension voltaic-theme-*.vsix --force
 ```
 
 Reload the window, then run `Preferences: Color Theme` from the command palette.
+`vsce` warns that it cannot find a `LICENSE`; the repository licence is
+[`LICENCE`](../LICENCE) and the manifest declares `MIT`, so the warning is
+cosmetic.
 
 **Copying a folder into `~/.vscode/extensions` does not work.** Since profiles
 landed, VS Code scans user extensions from the profile index at
@@ -31,37 +32,10 @@ directory when that file is missing. A hand-placed folder is never indexed, so
 it is silently ignored with no error anywhere. `code --install-extension` writes
 the index entry, which is what makes it the supported route.
 
-To build a VSIX without the packaging repo, write a throwaway manifest beside
-the themes. `vsce` needs `name`, `version`, `publisher` and `engines.vscode`:
-
-```sh
-WORK=$(mktemp -d) && mkdir -p "$WORK/themes"
-cp voltaic-*-color-theme.json "$WORK/themes/"
-cat > "$WORK/package.json" <<'JSON'
-{
-  "name": "voltaic-theme",
-  "displayName": "Voltaic",
-  "version": "1.0.0",
-  "publisher": "barrydobson",
-  "engines": { "vscode": "^1.70.0" },
-  "categories": ["Themes"],
-  "contributes": {
-    "themes": [
-      { "label": "Voltaic Dark", "uiTheme": "vs-dark",
-        "path": "./themes/voltaic-dark-color-theme.json" },
-      { "label": "Voltaic Light", "uiTheme": "vs",
-        "path": "./themes/voltaic-light-color-theme.json" }
-    ]
-  }
-}
-JSON
-(cd "$WORK" && npx --yes @vscode/vsce package --no-dependencies --allow-missing-repository)
-code --install-extension "$WORK"/voltaic-theme-*.vsix --force
-```
-
-For a throwaway look without installing anything,
-`code --extensionDevelopmentPath=<folder>` opens a second window with the theme
-loaded and leaves the index alone.
+Installing over the same version needs `--force`, so bump `VERSION` in
+[`build.py`](build.py) when a rebuild is meant to ship. For a throwaway look
+without touching the index at all, `code --extensionDevelopmentPath=$PWD` opens
+a second window with the theme loaded.
 
 ## Following the system appearance
 
@@ -198,10 +172,11 @@ Three jobs also moved to match the style guide:
 
 ## Customising
 
-Do not edit the theme JSON. It is generated from
+Do not edit the theme JSON or `package.json`. All three are generated from
 [`palette.json`](../palette.json) by [`build.py`](build.py), and `check.py`
-fails if the two disagree. Change the palette and run `./build.py` from the
-repository root.
+fails if they disagree. Change the palette and run `./build.py` from the
+repository root. The theme labels in the manifest come from the flavour names in
+the palette, so the picker and the palette cannot drift apart.
 
 For a one-off tweak that should not live in the palette, override it in your own
 `settings.json`:

@@ -1,0 +1,32 @@
+{
+  "name": "voltaic-theme",
+  "displayName": "Voltaic",
+  "description": "Voltaic Dark and Voltaic Light, generated from palette.json.",
+  "version": "1.1.0",
+  "publisher": "barrydobson",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/barrydobson/voltaic.git"
+  },
+  "engines": {
+    "vscode": "^1.70.0"
+  },
+  "categories": [
+    "Themes"
+  ],
+  "contributes": {
+    "themes": [
+      {
+        "label": "Voltaic Dark",
+        "uiTheme": "vs-dark",
+        "path": "./voltaic-dark-color-theme.json"
+      },
+      {
+        "label": "Voltaic Light",
+        "uiTheme": "vs",
+        "path": "./voltaic-light-color-theme.json"
+      }
+    ]
+  }
+}

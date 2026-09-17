@@ -190,7 +190,7 @@ Applications to port, and where the current hand-maintained version lives:
 
 | App | Current location |
 | --- | --- |
-| vscode | `vscode-theme-my-brand/themes/` |
+| vscode | `vscode-theme-my-brand/themes/`, retired once the port landed |
 | zed | `dotfiles/packages/zed/.config/zed/themes/voltaic.json` |
 | ghostty | `dotfiles/packages/ghostty/.config/ghostty/themes/` |
 | k9s | `dotfiles/packages/k9s/.config/k9s/skins/voltaic-dark.yaml` |
