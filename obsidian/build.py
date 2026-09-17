@@ -34,10 +34,19 @@ CODE = {"normal": "text", "comment": "subtle", "function": "blue",
         "property": "blue", "punctuation": "subtle", "string": "jade",
         "tag": "ember", "value": "ember"}
 
-RULES = """/* Inline code has no variable of its own: `--code-normal` is also the plain
-   text inside a fenced block, which has to stay neutral. */
-:not(pre) > code,
-.cm-inline-code {
+RULES = """/* Code blocks and inline chips take an outline rather than a fill. Every tone
+   lighter than the canvas drops `subtle` comments under 4.5:1 on dark: 4.05 on
+   `surface`, 3.41 on `overlay`. The border costs nothing and still reads. */
+body {
+  --code-border-width: 1px;
+}
+
+/* Inline code has no variable of its own: `--code-normal` is also the plain
+   text inside a fenced block, which has to stay neutral. Obsidian's own
+   `.markdown-rendered code` and `.cm-s-obsidian span.cm-inline-code` outrank a
+   bare element selector, so these match their shape to win on order. */
+.markdown-rendered :not(pre) > code,
+.cm-s-obsidian span.cm-inline-code {
   color: var(--color-yellow);
 }
 

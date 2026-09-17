@@ -96,7 +96,16 @@ covers tags, symbols and constants, so it takes `ember` for tags;
   file, because Obsidian has no variable for them.
 - **Inline code needs a selector too.** `--code-normal` is the plain text inside
   a fenced block as well as the colour of inline code, so it stays `text` and a
-  rule puts inline code on `amber`, per the markup table.
+  rule puts inline code on `amber`, per the markup table. The rule mirrors the
+  shape of Obsidian's own `.markdown-rendered code` and
+  `.cm-s-obsidian span.cm-inline-code`, because a bare `code` selector loses to
+  both on specificity and the theme silently has no effect.
+- **Code blocks take an outline, not a fill.** `--code-background` resolves to
+  `base`, which is 1.01:1 off the `deep` canvas in dark, so a fenced block has no
+  visible edge. Filling it is what everything else does and it is wrong here: on
+  dark, `subtle` comments drop to 4.05:1 over `surface` and 3.41:1 over
+  `overlay`, because `subtle` is tuned to clear 4.5:1 on `base` exactly.
+  `--code-border-width: 1px` draws the block in `overlay` and costs no contrast.
 - **Headings are `volt`, bold is `amber`, italic is `jade`.** Straight from the
   [markup table](../docs/style-guide.md#markup). It is louder in a prose app than
   in an editor, but it is the same decision Zed and VS Code make when they open a
