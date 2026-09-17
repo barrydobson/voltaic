@@ -1,0 +1,25 @@
+# Voltaic for herdr. Generated from palette.json, do not edit.
+#
+# Paste into ~/.config/herdr/config.toml, below the rest of the [theme] table.
+# Dark only: these are the dark flavour's values, so leave theme.auto_switch off.
+
+[theme.custom]
+accent = "#c8ff00"  # volt
+panel_bg = "#18181b"  # surface
+sidebar_bg = "#09090b"  # base
+active_row_bg = "#27272a"  # overlay
+selection_bg = "#2f3a09"  # volt at tint over base
+surface0 = "#27272a"  # overlay
+surface1 = "#3f3f46"  # muted
+surface_dim = "#3f3f46"  # muted
+overlay0 = "#787881"  # subtle
+overlay1 = "#787881"  # subtle
+text = "#d4d4d8"  # text
+subtext0 = "#a1a1aa"  # soft
+mauve = "#bb9af7"  # violet
+green = "#10b981"  # jade
+yellow = "#e0af68"  # amber
+red = "#f7768e"  # ember
+blue = "#7aa2f7"  # blue
+teal = "#73daca"  # teal
+peach = "#b9a58c"  # bronze
