@@ -1,0 +1,322 @@
+/* Voltaic for Obsidian.
+   Generated from palette.json; edit that, not this. */
+
+/* Voltaic Dark */
+.theme-dark {
+  /* Neutral ramp */
+  --color-base-00: #0c0a09;
+  --color-base-05: #09090b;
+  --color-base-10: #09090b;
+  --color-base-20: #09090b;
+  --color-base-25: #18181b;
+  --color-base-30: #27272a;
+  --color-base-35: #3f3f46;
+  --color-base-40: #3f3f46;
+  --color-base-50: #52525b;
+  --color-base-60: #787881;
+  --color-base-70: #a1a1aa;
+  --color-base-100: #d4d4d8;
+
+  /* Named colours */
+  --color-red: #f7768e;
+  --color-orange: #b9a58c;
+  --color-yellow: #e0af68;
+  --color-green: #10b981;
+  --color-cyan: #2ac3de;
+  --color-blue: #7aa2f7;
+  --color-purple: #bb9af7;
+  --color-pink: #ff9e9e;
+  --color-red-rgb: 247, 118, 142;
+  --color-orange-rgb: 185, 165, 140;
+  --color-yellow-rgb: 224, 175, 104;
+  --color-green-rgb: 16, 185, 129;
+  --color-cyan-rgb: 42, 195, 222;
+  --color-blue-rgb: 122, 162, 247;
+  --color-purple-rgb: 187, 154, 247;
+  --color-pink-rgb: 255, 158, 158;
+
+  /* Accent */
+  --accent-h: 73;
+  --accent-s: 100%;
+  --accent-l: 50%;
+  --color-accent: #c8ff00;
+  --color-accent-1: #c8ff00;
+  --color-accent-2: #a3e635;
+  --color-accent-hsl: 73, 100%, 50%;
+  --interactive-accent: #c8ff00;
+  --interactive-accent-hover: #a3e635;
+  --interactive-accent-hsl: 73, 100%, 50%;
+  --text-on-accent: #0c0a09;
+  --text-on-accent-inverted: #fafafa;
+
+  /* Surfaces */
+  --background-modifier-hover: #27272a;
+  --background-modifier-active-hover: #3f3f46;
+  --background-modifier-border: #27272a;
+  --background-modifier-border-hover: #3f3f46;
+  --background-modifier-border-focus: #c8ff00;
+  --background-modifier-error: #f7768e;
+  --background-modifier-error-rgb: 247, 118, 142;
+  --background-modifier-error-hover: #ff9e9e;
+  --background-modifier-success: #10b981;
+  --background-modifier-success-rgb: 16, 185, 129;
+  --background-modifier-message: #18181b;
+  --background-modifier-form-field: #18181b;
+  --modal-background: #18181b;
+  --interactive-normal: #18181b;
+  --interactive-hover: #27272a;
+
+  /* Text */
+  --text-normal: #d4d4d8;
+  --text-muted: #a1a1aa;
+  --text-faint: #52525b;
+  --text-success: #10b981;
+  --text-warning: #e0af68;
+  --text-error: #f7768e;
+  --text-accent: #a3e635;
+  --text-accent-hover: #c8ff00;
+  --text-selection: #c8ff0033;
+  --text-highlight-bg: #e0af6833;
+  --caret-color: #c8ff00;
+
+  /* Icons, scrollbars and guides */
+  --icon-color: #a1a1aa;
+  --icon-color-hover: #d4d4d8;
+  --icon-color-active: #a3e635;
+  --icon-color-focused: #d4d4d8;
+  --collapse-icon-color: #52525b;
+  --collapse-icon-color-collapsed: #a1a1aa;
+  --scrollbar-bg: transparent;
+  --scrollbar-thumb-bg: #c8ff0014;
+  --scrollbar-active-thumb-bg: #c8ff0024;
+  --indentation-guide-color: #27272a;
+  --indentation-guide-color-active: #3f3f46;
+
+  /* File explorer */
+  --nav-item-color: #a1a1aa;
+  --nav-item-color-hover: #d4d4d8;
+  --nav-item-color-active: #d4d4d8;
+  --nav-item-color-selected: #d4d4d8;
+  --nav-item-color-highlighted: #a3e635;
+  --nav-item-background-hover: #27272a;
+  --nav-item-background-active: #c8ff0033;
+  --nav-item-background-selected: #c8ff0033;
+
+  /* Markup */
+  --heading-formatting: #52525b;
+  --h1-color: #c8ff00;
+  --h2-color: #c8ff00;
+  --h3-color: #c8ff00;
+  --h4-color: #c8ff00;
+  --h5-color: #c8ff00;
+  --h6-color: #c8ff00;
+  --bold-color: #e0af68;
+  --italic-color: #10b981;
+  --list-marker-color: #f7768e;
+  --blockquote-border-color: #787881;
+  --tag-color: #a3e635;
+  --tag-color-hover: #c8ff00;
+  --tag-background: #c8ff0014;
+  --tag-background-hover: #c8ff0024;
+  --link-color: #7aa2f7;
+  --link-color-hover: #7aa2f7;
+  --link-external-color: #2ac3de;
+  --link-external-color-hover: #2ac3de;
+  --link-unresolved-color: #787881;
+  --link-unresolved-opacity: 1;
+  --link-unresolved-decoration-color: #f7768e;
+
+  /* Code */
+  --code-normal: #d4d4d8;
+  --code-comment: #787881;
+  --code-function: #7aa2f7;
+  --code-important: #e0af68;
+  --code-keyword: #c8ff00;
+  --code-operator: #89ddff;
+  --code-property: #7aa2f7;
+  --code-punctuation: #787881;
+  --code-string: #10b981;
+  --code-tag: #f7768e;
+  --code-value: #f7768e;
+
+  /* Callouts */
+  --callout-warning: #e0af68;
+  --callout-question: #b9a58c;
+  --callout-quote: #787881;
+
+  /* Graph */
+  --graph-text: #d4d4d8;
+  --graph-line: #27272a;
+  --graph-node: #a1a1aa;
+  --graph-node-unresolved: #52525b;
+  --graph-node-focused: #c8ff00;
+  --graph-node-tag: #a3e635;
+  --graph-node-attachment: #7aa2f7;
+}
+
+/* Voltaic Light */
+.theme-light {
+  /* Neutral ramp */
+  --color-base-00: #faf9f7;
+  --color-base-05: #f0efed;
+  --color-base-10: #f0efed;
+  --color-base-20: #f0efed;
+  --color-base-25: #ffffff;
+  --color-base-30: #e4e4e7;
+  --color-base-35: #d4d4d8;
+  --color-base-40: #d4d4d8;
+  --color-base-50: #a1a1aa;
+  --color-base-60: #6c6c75;
+  --color-base-70: #52525b;
+  --color-base-100: #3f3f46;
+
+  /* Named colours */
+  --color-red: #be123c;
+  --color-orange: #92400e;
+  --color-yellow: #9c5f07;
+  --color-green: #047857;
+  --color-cyan: #0e7490;
+  --color-blue: #1d4ed8;
+  --color-purple: #7c3aed;
+  --color-pink: #e11d48;
+  --color-red-rgb: 190, 18, 60;
+  --color-orange-rgb: 146, 64, 14;
+  --color-yellow-rgb: 156, 95, 7;
+  --color-green-rgb: 4, 120, 87;
+  --color-cyan-rgb: 14, 116, 144;
+  --color-blue-rgb: 29, 78, 216;
+  --color-purple-rgb: 124, 58, 237;
+  --color-pink-rgb: 225, 29, 72;
+
+  /* Accent */
+  --accent-h: 85;
+  --accent-s: 78%;
+  --accent-l: 27%;
+  --color-accent: #4c790f;
+  --color-accent-1: #4c790f;
+  --color-accent-2: #3f6212;
+  --color-accent-hsl: 85, 78%, 27%;
+  --interactive-accent: #4c790f;
+  --interactive-accent-hover: #3f6212;
+  --interactive-accent-hsl: 85, 78%, 27%;
+  --text-on-accent: #faf9f7;
+  --text-on-accent-inverted: #27272a;
+
+  /* Surfaces */
+  --background-modifier-hover: #e4e4e7;
+  --background-modifier-active-hover: #d4d4d8;
+  --background-modifier-border: #e4e4e7;
+  --background-modifier-border-hover: #d4d4d8;
+  --background-modifier-border-focus: #4c790f;
+  --background-modifier-error: #be123c;
+  --background-modifier-error-rgb: 190, 18, 60;
+  --background-modifier-error-hover: #e11d48;
+  --background-modifier-success: #047857;
+  --background-modifier-success-rgb: 4, 120, 87;
+  --background-modifier-message: #ffffff;
+  --background-modifier-form-field: #ffffff;
+  --modal-background: #ffffff;
+  --interactive-normal: #ffffff;
+  --interactive-hover: #e4e4e7;
+
+  /* Text */
+  --text-normal: #3f3f46;
+  --text-muted: #52525b;
+  --text-faint: #a1a1aa;
+  --text-success: #047857;
+  --text-warning: #9c5f07;
+  --text-error: #be123c;
+  --text-accent: #3f6212;
+  --text-accent-hover: #4c790f;
+  --text-selection: #4c790f33;
+  --text-highlight-bg: #9c5f0733;
+  --caret-color: #4c790f;
+
+  /* Icons, scrollbars and guides */
+  --icon-color: #52525b;
+  --icon-color-hover: #3f3f46;
+  --icon-color-active: #3f6212;
+  --icon-color-focused: #3f3f46;
+  --collapse-icon-color: #a1a1aa;
+  --collapse-icon-color-collapsed: #52525b;
+  --scrollbar-bg: transparent;
+  --scrollbar-thumb-bg: #4c790f14;
+  --scrollbar-active-thumb-bg: #4c790f24;
+  --indentation-guide-color: #e4e4e7;
+  --indentation-guide-color-active: #d4d4d8;
+
+  /* File explorer */
+  --nav-item-color: #52525b;
+  --nav-item-color-hover: #3f3f46;
+  --nav-item-color-active: #3f3f46;
+  --nav-item-color-selected: #3f3f46;
+  --nav-item-color-highlighted: #3f6212;
+  --nav-item-background-hover: #e4e4e7;
+  --nav-item-background-active: #4c790f33;
+  --nav-item-background-selected: #4c790f33;
+
+  /* Markup */
+  --heading-formatting: #a1a1aa;
+  --h1-color: #4c790f;
+  --h2-color: #4c790f;
+  --h3-color: #4c790f;
+  --h4-color: #4c790f;
+  --h5-color: #4c790f;
+  --h6-color: #4c790f;
+  --bold-color: #9c5f07;
+  --italic-color: #047857;
+  --list-marker-color: #be123c;
+  --blockquote-border-color: #6c6c75;
+  --tag-color: #3f6212;
+  --tag-color-hover: #4c790f;
+  --tag-background: #4c790f14;
+  --tag-background-hover: #4c790f24;
+  --link-color: #1d4ed8;
+  --link-color-hover: #1d4ed8;
+  --link-external-color: #0e7490;
+  --link-external-color-hover: #0e7490;
+  --link-unresolved-color: #6c6c75;
+  --link-unresolved-opacity: 1;
+  --link-unresolved-decoration-color: #be123c;
+
+  /* Code */
+  --code-normal: #3f3f46;
+  --code-comment: #6c6c75;
+  --code-function: #1d4ed8;
+  --code-important: #9c5f07;
+  --code-keyword: #4c790f;
+  --code-operator: #52525b;
+  --code-property: #1d4ed8;
+  --code-punctuation: #6c6c75;
+  --code-string: #047857;
+  --code-tag: #be123c;
+  --code-value: #be123c;
+
+  /* Callouts */
+  --callout-warning: #9c5f07;
+  --callout-question: #92400e;
+  --callout-quote: #6c6c75;
+
+  /* Graph */
+  --graph-text: #3f3f46;
+  --graph-line: #e4e4e7;
+  --graph-node: #52525b;
+  --graph-node-unresolved: #a1a1aa;
+  --graph-node-focused: #4c790f;
+  --graph-node-tag: #3f6212;
+  --graph-node-attachment: #1d4ed8;
+}
+
+/* Inline code has no variable of its own: `--code-normal` is also the plain
+   text inside a fenced block, which has to stay neutral. */
+:not(pre) > code,
+.cm-inline-code {
+  color: var(--color-yellow);
+}
+
+/* Menus and suggestion popups take `--background-secondary`, which is the
+   sidebar tone. The style guide floats them on `surface` instead. */
+.menu,
+.suggestion-container {
+  background-color: var(--color-base-25);
+}
