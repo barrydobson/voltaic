@@ -151,8 +151,12 @@ def variables(palette, flavour):
         ("Markup", {
             "--heading-formatting": c["dim"],
             **{f"--h{level}-color": c["volt"] for level in range(1, 7)},
-            "--bold-color": c["amber"],
-            "--italic-color": c["jade"],
+            # The markup table's amber and jade are markdown *tokens* in an
+            # editor. As prose weights they flood the page, and inside a
+            # highlight they fall to 3.76:1 and 3.98:1 on light. Emphasised
+            # text takes `bright` from the typography table instead.
+            "--bold-color": c["bright"],
+            "--italic-color": c["text"],
             "--list-marker-color": c["ember"],
             "--blockquote-border-color": c["subtle"],
             "--tag-color": c["arc"],
