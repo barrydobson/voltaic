@@ -17,7 +17,8 @@ EXEMPT = {"base", "deep", "surface", "overlay", "muted", "dim"}
 # they have to survive being composited over base. `heavy` is absent on purpose:
 # at 50% it drops text below 3:1 on dark, so it is for marks and borders only.
 TINTED = [("volt", "tint"), ("volt", "veil"), ("overlay", "veil"),
-          ("ember", "tint"), ("jade", "tint")]
+          ("ember", "tint"), ("jade", "tint"), ("jade", "veil"),
+          ("amber", "tint"), ("blue", "veil"), ("violet", "veil")]
 
 
 def rgb(h):
