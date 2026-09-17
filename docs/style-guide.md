@@ -91,6 +91,33 @@ Voltaic" rather than "this worked", and it is already doing duty as the cursor,
 the focus ring and the keyword colour. The Zed and VS Code themes currently use
 `volt` for success and created, which is drift to fix when they are regenerated.
 
+## Ordered series
+
+Charts, gauges and sparklines ask for several colours at once. Two rules cover it.
+
+**A series that means something is not a series.** Pass and fail take `jade` and
+`ember`. Normal, warning and critical take `jade`, `amber`, `ember`. Reach for the
+rotation below only when the entries differ in identity rather than in state.
+
+**Otherwise take the rotation in order**, stopping when you have enough:
+
+| # | Colour | |
+| --- | --- | --- |
+| 1 | `blue` | <img src="../assets/palette/circles/dark-blue.png" width="16" height="16" alt=""/> <img src="../assets/palette/circles/light-blue.png" width="16" height="16" alt=""/> |
+| 2 | `teal` | <img src="../assets/palette/circles/dark-teal.png" width="16" height="16" alt=""/> <img src="../assets/palette/circles/light-teal.png" width="16" height="16" alt=""/> |
+| 3 | `bronze` | <img src="../assets/palette/circles/dark-bronze.png" width="16" height="16" alt=""/> <img src="../assets/palette/circles/light-bronze.png" width="16" height="16" alt=""/> |
+| 4 | `ice` | <img src="../assets/palette/circles/dark-ice.png" width="16" height="16" alt=""/> <img src="../assets/palette/circles/light-ice.png" width="16" height="16" alt=""/> |
+| 5 | `lilac` | <img src="../assets/palette/circles/dark-lilac.png" width="16" height="16" alt=""/> <img src="../assets/palette/circles/light-lilac.png" width="16" height="16" alt=""/> |
+
+Every pair is at least 15.3 dE apart in both flavours, so any prefix of the
+rotation stays separated. The status colours are absent so that a categorical
+series never reads as a state it does not have, and `volt` and `arc` are absent
+because they carry chrome in every port and a series in them reads as furniture.
+
+**The bright tier is not a second step.** `arc` and `lime`, `amber` and `gold`,
+`teal` and `aqua` are the same hex in the dark flavour. A second series takes the
+next entry in the rotation, never a lighter version of the first.
+
 ## File kinds
 
 For anything that colours a directory listing.
