@@ -36,11 +36,23 @@ Each `<app>/build.py` exposes `generate(palette) -> {filename: text}`; root
 install instructions. `docs/style-guide.md` decides which colour does which job —
 read it before writing a port.
 
+Nine so far: `claude` `eza` `ghostty` `herdr` `k9s` `obsidian` `starship`
+`vscode` `zed`.
+
 ## Reference material
 
 - Hand-maintained originals: `~/_git/barrydobson/dotfiles/packages/{zed,k9s,ghostty,eza,starship,herdr,claude}/`.
   They predate the contrast fixes, so they record *decisions*, not current values.
   The VS Code original lived in a `vscode-theme-my-brand` repo, now retired; the
   `vscode/` port records what it used to do under "Resolved drift".
+- The Obsidian original is `~/_git/barrydobson/delta-obsidian-theme`, a separate
+  theme rather than a hand-maintained Voltaic. Its fonts and page styles are not
+  ported; `obsidian/` records the colour side under "Resolved drift".
+- Obsidian's CSS variables are only listed in full in the docs source. The
+  published site is client-rendered, so `curl` returns an empty page; read the
+  markdown instead:
+  `gh api "repos/obsidianmd/obsidian-developer-docs/contents/en/Reference/CSS variables/<page>.md" --jq '.content' | base64 -d`
 - Catppuccin is the structural reference for port layout and key coverage:
   `gh api repos/catppuccin/<port>/contents/<path> --jq '.content' | base64 -d`
+  Files over 1 MB come back empty from that call; fetch those from
+  `raw.githubusercontent.com` instead.

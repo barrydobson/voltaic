@@ -186,28 +186,32 @@ it and `./check.py` to confirm the result holds. The swatch PNGs are written by
 install. Do not hand-edit the colour tables in this file; `build.py` overwrites
 them and `check.py` fails if they have drifted.
 
-Applications to port, and where the current hand-maintained version lives:
+## Ports
 
-| App | Current location |
-| --- | --- |
-| vscode | `vscode-theme-my-brand/themes/`, retired once the port landed |
-| zed | `dotfiles/packages/zed/.config/zed/themes/voltaic.json` |
-| ghostty | `dotfiles/packages/ghostty/.config/ghostty/themes/` |
-| k9s | `dotfiles/packages/k9s/.config/k9s/skins/voltaic-dark.yaml` |
-| starship | `dotfiles/packages/starship/.config/starship/starship.toml` |
-| eza | `dotfiles/packages/eza/.config/eza/theme.yml` |
-| claude | `dotfiles/packages/claude/.claude/themes/voltaic-dark.json` |
-| herdr | `dotfiles/packages/herdr/.config/herdr/config.toml` |
+Nine, each generated from `palette.json` by its own `build.py`:
 
-Each directory lands with its port. None of them exist yet.
+| Port | Generates | Hand-maintained original |
+| --- | --- | --- |
+| [claude](claude/) | `voltaic-dark.json`, `voltaic-light.json` | `dotfiles/packages/claude/.claude/themes/` |
+| [eza](eza/) | `voltaic-dark.yml`, `voltaic-light.yml` | `dotfiles/packages/eza/.config/eza/theme.yml` |
+| [ghostty](ghostty/) | `voltaic-dark`, `voltaic-light` | `dotfiles/packages/ghostty/.config/ghostty/themes/` |
+| [herdr](herdr/) | `voltaic.toml` | `dotfiles/packages/herdr/.config/herdr/config.toml` |
+| [k9s](k9s/) | `voltaic-dark.yaml`, `voltaic-light.yaml` | `dotfiles/packages/k9s/.config/k9s/skins/` |
+| [obsidian](obsidian/) | `theme.css`, `manifest.json` | `delta-obsidian-theme`, a separate theme |
+| [starship](starship/) | `voltaic.toml` | `dotfiles/packages/starship/.config/starship/starship.toml` |
+| [vscode](vscode/) | two theme files and `package.json` | `vscode-theme-my-brand`, retired |
+| [zed](zed/) | `voltaic.json` | `dotfiles/packages/zed/.config/zed/themes/voltaic.json` |
 
-## Known drift
+Each port's README covers how to install it, how its keys map to the palette, and
+where it deviates from the style guide and why.
 
-The palette was reverse-engineered from the existing hand-maintained themes, which
-had picked up colours that belong to no consistent family. These need a decision
-before the ports are generated:
+## Resolved drift
 
-| Hex | Where it appears | Resolution |
+The palette was reverse-engineered from the hand-maintained themes, which had
+picked up colours belonging to no consistent family. Every one of them is now
+resolved, and each port's README records what moved in that port:
+
+| Hex | Where it appeared | Resolution |
 | --- | --- | --- |
 | `#caea28` | Signature accent in every port | `volt`, `#c8ff00` |
 | `#71717a` | ANSI bright black, pipes, inactive and description text | `subtle` |
@@ -217,17 +221,18 @@ before the ports are generated:
 | `#c0a36e` | Five syntax scopes in vscode | `bronze` |
 | `#6d28d9` | Light violet in vscode | `violet` |
 | `#f5f5f4` | Light tab bar background in vscode | `base` |
-| `#d97757` | Claude marker in starship | Anthropic brand orange, not a theme colour. `bronze`, or keep the literal |
+| `#d97757` | Claude marker in starship | Anthropic brand orange, not a theme colour. `bronze` |
 
-Regenerate with `rg -o '#[0-9a-fA-F]{6}' <theme file>` and compare against
-`palette.json`; anything not in it is either drift or a composited tint.
+To check a port for fresh drift, run `rg -o '#[0-9a-fA-F]{6}' <theme file>` and
+compare against `palette.json`; anything not in it is either drift or a
+composited tint.
 
-Every port also predates the contrast fixes in `palette.json`, so the six light
-accents and two dark ones that moved will differ from what is currently installed.
-That resolves itself when each port is generated.
+The hand-maintained themes also predate the contrast fixes in `palette.json`, so
+the six light accents and two dark ones that moved differ from whatever is still
+installed. Reinstalling the generated port settles it.
 
-Diff and selection backgrounds are resolved: they are accents composited over the
-background at one of the five steps in the
+Diff and selection backgrounds are not drift: they are accents composited over
+the background at one of the five steps in the
 [style guide](docs/style-guide.md#tints-and-overlays), not palette entries.
 
 ## Licence
