@@ -65,7 +65,7 @@ code, callouts and the graph. Anything not listed here derives from the ramp:
 | `--nav-item-color-highlighted` | Highlighted file | `arc` |
 | `--h1-color` … `--h6-color` | Headings | `volt` |
 | `--heading-formatting` | The `#` marks | `dim` |
-| `--bold-color` `--italic-color` | Strong emphasis, emphasis | `bright`, `text` |
+| `--bold-color` `--italic-color` | Strong emphasis, emphasis | `inherit` |
 | `--list-marker-color` | Bullets and numbers | `ember` |
 | `--blockquote-border-color` | Block quote rule | `subtle` |
 | `--tag-color` `--tag-background` | Tag pills | `arc` on `volt` at `faint` |
@@ -106,16 +106,16 @@ covers tags, symbols and constants, so it takes `ember` for tags;
   dark, `subtle` comments drop to 4.05:1 over `surface` and 3.41:1 over
   `overlay`, because `subtle` is tuned to clear 4.5:1 on `base` exactly.
   `--code-border-width: 1px` draws the block in `overlay` and costs no contrast.
-- **Headings are `volt`, but bold and italic are not `amber` and `jade`.**
-  Headings come straight from the [markup
-  table](../docs/style-guide.md#markup). Emphasis does not, and the reason is
-  measured rather than aesthetic: that row describes markdown *tokens* in an
-  editor, where emphasis is occasional. In a vault it is constant and it nests,
-  and bold inside a `==highlight==` falls to 3.76:1 on light, italic to 3.98:1,
-  both under the 4.5:1 floor this repository enforces everywhere else. Emphasised
-  text therefore takes `bright` from the [typography
-  table](../docs/style-guide.md#typography), at 10.82:1 in the same spot, and
-  italic keeps `text` and is distinguished by its slant. The snippet below puts
+- **Headings are `volt`, but emphasis carries no colour at all.** Headings come
+  straight from the [markup table](../docs/style-guide.md#markup). Bold and
+  italic do not, for two reasons. Obsidian matches `b, strong` and `i, em`
+  directly, so whatever colour sits there beats the one a callout title or a
+  `==highlight==` passes down by inheritance: colour the bold and a callout
+  title written with `**` stops being the callout's colour. And the markup
+  table's own answer fails the contrast floor anyway, since bold inside a
+  highlight measures 3.76:1 on light and italic 3.98:1, against a 4.5:1 floor.
+  Both therefore stay at Obsidian's `inherit`, where weight and slant carry the
+  emphasis and the surrounding context keeps its colour. The snippet below puts
   the markup colours back if you want them.
 - **Tags are `arc` on a `volt` pill, not `ember`.** The style guide's tag row is
   about markup tags, `<div>` and friends, which in Obsidian is `--code-tag`. A

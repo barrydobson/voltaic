@@ -151,12 +151,13 @@ def variables(palette, flavour):
         ("Markup", {
             "--heading-formatting": c["dim"],
             **{f"--h{level}-color": c["volt"] for level in range(1, 7)},
-            # The markup table's amber and jade are markdown *tokens* in an
-            # editor. As prose weights they flood the page, and inside a
-            # highlight they fall to 3.76:1 and 3.98:1 on light. Emphasised
-            # text takes `bright` from the typography table instead.
-            "--bold-color": c["bright"],
-            "--italic-color": c["text"],
+            # Emphasis keeps its context's colour. `b, strong` and `i, em`
+            # match the element directly, so any colour here beats the one a
+            # callout title or a highlight inherits down. Obsidian sets both to
+            # `inherit` for that reason and the markup table's amber and jade
+            # would also drop bold in a highlight to 3.76:1 on light.
+            "--bold-color": "inherit",
+            "--italic-color": "inherit",
             "--list-marker-color": c["ember"],
             "--blockquote-border-color": c["subtle"],
             "--tag-color": c["arc"],
