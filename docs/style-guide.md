@@ -134,6 +134,40 @@ For anything that colours a directory listing.
 | Special files | `violet` | <img src="../assets/palette/circles/dark-violet.png" width="16" height="16" alt=""/> <img src="../assets/palette/circles/light-violet.png" width="16" height="16" alt=""/> |
 | Mount points | `sky` | <img src="../assets/palette/circles/dark-sky.png" width="16" height="16" alt=""/> <img src="../assets/palette/circles/light-sky.png" width="16" height="16" alt=""/> |
 
+## Listing metadata
+
+The columns beside the filename: ownership, permission bits, size and age.
+
+| Function | Colour | |
+| --- | --- | --- |
+| Your user and group | `bright`, `text` | <img src="../assets/palette/circles/dark-bright.png" width="16" height="16" alt=""/> <img src="../assets/palette/circles/light-bright.png" width="16" height="16" alt=""/> |
+| Another user's | `soft` | <img src="../assets/palette/circles/dark-soft.png" width="16" height="16" alt=""/> <img src="../assets/palette/circles/light-soft.png" width="16" height="16" alt=""/> |
+| Root | `ember` | <img src="../assets/palette/circles/dark-ember.png" width="16" height="16" alt=""/> <img src="../assets/palette/circles/light-ember.png" width="16" height="16" alt=""/> |
+| Write bit | `amber` | <img src="../assets/palette/circles/dark-amber.png" width="16" height="16" alt=""/> <img src="../assets/palette/circles/light-amber.png" width="16" height="16" alt=""/> |
+| Execute bit | `volt` | <img src="../assets/palette/circles/dark-volt.png" width="16" height="16" alt=""/> <img src="../assets/palette/circles/light-volt.png" width="16" height="16" alt=""/> |
+| Dates, inodes, block counts, octal modes | `soft` | <img src="../assets/palette/circles/dark-soft.png" width="16" height="16" alt=""/> <img src="../assets/palette/circles/light-soft.png" width="16" height="16" alt=""/> |
+
+Permissions read as a grid rather than a sentence, so the read bit takes the owner
+tier from the table above and the other two carry their own meaning: `amber` warns
+that something is writable, `volt` matches the executable file kind.
+
+**The size ramp escalates.** A file size is ordinal, not categorical, so it takes
+one colour per magnitude and gets louder as the number grows. The unit takes the
+same colour as its number, so `4.2M` reads as one token.
+
+| Magnitude | Colour | |
+| --- | --- | --- |
+| Bytes | `soft` | <img src="../assets/palette/circles/dark-soft.png" width="16" height="16" alt=""/> <img src="../assets/palette/circles/light-soft.png" width="16" height="16" alt=""/> |
+| Kilo | `text` | <img src="../assets/palette/circles/dark-text.png" width="16" height="16" alt=""/> <img src="../assets/palette/circles/light-text.png" width="16" height="16" alt=""/> |
+| Mega | `blue` | <img src="../assets/palette/circles/dark-blue.png" width="16" height="16" alt=""/> <img src="../assets/palette/circles/light-blue.png" width="16" height="16" alt=""/> |
+| Giga | `amber` | <img src="../assets/palette/circles/dark-amber.png" width="16" height="16" alt=""/> <img src="../assets/palette/circles/light-amber.png" width="16" height="16" alt=""/> |
+| Tera and beyond | `ember` | <img src="../assets/palette/circles/dark-ember.png" width="16" height="16" alt=""/> <img src="../assets/palette/circles/light-ember.png" width="16" height="16" alt=""/> |
+
+Version control columns take the [status colours](#status-and-version-control)
+unchanged. Type changes, where a file becomes a directory or a symlink, take
+`cyan`: the status table has no entry for them, and the thing that changed is the
+file's type.
+
 ## Terminal
 
 | Function | Colour | |

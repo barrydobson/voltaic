@@ -1,0 +1,104 @@
+# Voltaic Dark for eza. Generated from palette.json, do not edit.
+colourful: true
+
+filekinds:
+  normal: {foreground: "#d4d4d8"}
+  directory: {foreground: "#7aa2f7"}
+  symlink: {foreground: "#73daca"}
+  pipe: {foreground: "#787881"}
+  block_device: {foreground: "#ff9e9e"}
+  char_device: {foreground: "#ff9e9e"}
+  socket: {foreground: "#52525b"}
+  special: {foreground: "#bb9af7"}
+  executable: {foreground: "#c8ff00"}
+  mount_point: {foreground: "#a9c4ff"}
+
+perms:
+  user_read: {foreground: "#fafafa"}
+  user_write: {foreground: "#e0af68"}
+  user_execute_file: {foreground: "#c8ff00"}
+  user_execute_other: {foreground: "#c8ff00"}
+  group_read: {foreground: "#d4d4d8"}
+  group_write: {foreground: "#e0af68"}
+  group_execute: {foreground: "#c8ff00"}
+  other_read: {foreground: "#a1a1aa"}
+  other_write: {foreground: "#e0af68"}
+  other_execute: {foreground: "#c8ff00"}
+  special_user_file: {foreground: "#bb9af7"}
+  special_other: {foreground: "#52525b"}
+  attribute: {foreground: "#a1a1aa"}
+
+size:
+  major: {foreground: "#d4d4d8"}
+  minor: {foreground: "#a1a1aa"}
+  number_byte: {foreground: "#a1a1aa"}
+  number_kilo: {foreground: "#d4d4d8"}
+  number_mega: {foreground: "#7aa2f7"}
+  number_giga: {foreground: "#e0af68"}
+  number_huge: {foreground: "#f7768e"}
+  unit_byte: {foreground: "#a1a1aa"}
+  unit_kilo: {foreground: "#d4d4d8"}
+  unit_mega: {foreground: "#7aa2f7"}
+  unit_giga: {foreground: "#e0af68"}
+  unit_huge: {foreground: "#f7768e"}
+
+users:
+  user_you: {foreground: "#fafafa"}
+  user_root: {foreground: "#f7768e"}
+  user_other: {foreground: "#a1a1aa"}
+  group_yours: {foreground: "#d4d4d8"}
+  group_other: {foreground: "#a1a1aa"}
+  group_root: {foreground: "#f7768e"}
+
+links:
+  normal: {foreground: "#73daca"}
+  multi_link_file: {foreground: "#a9c4ff"}
+
+git:
+  new: {foreground: "#10b981"}
+  modified: {foreground: "#e0af68"}
+  deleted: {foreground: "#f7768e"}
+  renamed: {foreground: "#e0af68"}
+  typechange: {foreground: "#2ac3de"}
+  ignored: {foreground: "#787881"}
+  conflicted: {foreground: "#bb9af7"}
+
+git_repo:
+  branch_main: {foreground: "#d4d4d8"}
+  branch_other: {foreground: "#bb9af7"}
+  git_clean: {foreground: "#10b981"}
+  git_dirty: {foreground: "#e0af68"}
+
+security_context:
+  none: {foreground: "#787881"}
+  selinux:
+    colon: {foreground: "#787881"}
+    user: {foreground: "#d4d4d8"}
+    role: {foreground: "#bb9af7"}
+    typ: {foreground: "#52525b"}
+    range: {foreground: "#bb9af7"}
+
+file_type:
+  image: {foreground: "#e0af68"}
+  video: {foreground: "#f7768e"}
+  music: {foreground: "#10b981"}
+  lossless: {foreground: "#73daca"}
+  crypto: {foreground: "#b9a58c"}
+  document: {foreground: "#d4d4d8"}
+  compressed: {foreground: "#d4bff0"}
+  temp: {foreground: "#787881"}
+  compiled: {foreground: "#ff9e9e"}
+  build: {foreground: "#a1a1aa"}
+  source: {foreground: "#2ac3de"}
+
+punctuation: {foreground: "#787881"}
+date: {foreground: "#a1a1aa"}
+inode: {foreground: "#a1a1aa"}
+blocks: {foreground: "#a1a1aa"}
+header: {foreground: "#fafafa"}
+octal: {foreground: "#a1a1aa"}
+flags: {foreground: "#bb9af7"}
+symlink_path: {foreground: "#73daca"}
+control_char: {foreground: "#e0af68"}
+broken_symlink: {foreground: "#f7768e"}
+broken_path_overlay: {foreground: "#52525b"}
