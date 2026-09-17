@@ -13,17 +13,38 @@ marketplace listing; it owns no colours.
 
 ## Install
 
-VS Code only loads a colour theme from an extension, so the theme files need an
-extension folder around them. The shortest route is a local one:
+VS Code only loads a colour theme from an extension, and an extension has to be
+installed rather than dropped in place. Copy both files into
+`vscode-theme-my-brand/themes/`, then package and install from there:
 
 ```sh
-OUT=~/.vscode/extensions/voltaic-theme
-mkdir -p "$OUT/themes" && cp voltaic-*-color-theme.json "$OUT/themes/"
-cat > "$OUT/package.json" <<'JSON'
+npx @vscode/vsce package --no-dependencies
+code --install-extension voltaic-theme-*.vsix --force
+```
+
+Reload the window, then run `Preferences: Color Theme` from the command palette.
+
+**Copying a folder into `~/.vscode/extensions` does not work.** Since profiles
+landed, VS Code scans user extensions from the profile index at
+`~/.vscode/extensions/extensions.json` and only falls back to listing the
+directory when that file is missing. A hand-placed folder is never indexed, so
+it is silently ignored with no error anywhere. `code --install-extension` writes
+the index entry, which is what makes it the supported route.
+
+To build a VSIX without the packaging repo, write a throwaway manifest beside
+the themes. `vsce` needs `name`, `version`, `publisher` and `engines.vscode`:
+
+```sh
+WORK=$(mktemp -d) && mkdir -p "$WORK/themes"
+cp voltaic-*-color-theme.json "$WORK/themes/"
+cat > "$WORK/package.json" <<'JSON'
 {
   "name": "voltaic-theme",
+  "displayName": "Voltaic",
   "version": "1.0.0",
+  "publisher": "barrydobson",
   "engines": { "vscode": "^1.70.0" },
+  "categories": ["Themes"],
   "contributes": {
     "themes": [
       { "label": "Voltaic Dark", "uiTheme": "vs-dark",
@@ -34,17 +55,13 @@ cat > "$OUT/package.json" <<'JSON'
   }
 }
 JSON
+(cd "$WORK" && npx --yes @vscode/vsce package --no-dependencies --allow-missing-repository)
+code --install-extension "$WORK"/voltaic-theme-*.vsix --force
 ```
 
-Restart VS Code, then run `Preferences: Color Theme` from the command palette.
-
-To publish instead, copy both files into `vscode-theme-my-brand/themes/` and
-package from there:
-
-```sh
-npx @vscode/vsce package --no-dependencies
-code --install-extension voltaic-theme-*.vsix
-```
+For a throwaway look without installing anything,
+`code --extensionDevelopmentPath=<folder>` opens a second window with the theme
+loaded and leaves the index alone.
 
 ## Following the system appearance
 
