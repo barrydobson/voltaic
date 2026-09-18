@@ -121,9 +121,15 @@ def main():
     README.write_text(render_readme(palette, README.read_text()))
     print(f"{len(written)} swatches, README tables rebuilt")
     for directory, module in ports():
-        for name, content in module.generate(palette).items():
-            (directory / name).write_text(content)
-            print(f"{directory.name}/{name}")
+        generated = module.generate(palette)
+        for name, content in generated.items():
+            path = directory / name
+            path.parent.mkdir(parents=True, exist_ok=True)
+            path.write_text(content)
+        # One line per file is fine for a handful; the icon port writes 1300.
+        listing = (", ".join(sorted(generated)) if len(generated) <= 4
+                   else f"{len(generated)} files")
+        print(f"{directory.name}/: {listing}")
 
 
 if __name__ == "__main__":

@@ -76,14 +76,15 @@ def check():
     if not all(0 < s < 1 for s in steps):
         errors.append("alpha: steps must sit between 0 and 1 exclusive")
 
-    for name, data in build.swatches(palette).items():
+    swatches = build.swatches(palette)
+    for name, data in swatches.items():
         path = build.CIRCLES / name
         if not path.exists():
             errors.append(f"{path.relative_to(build.ROOT)}: missing, run ./build.py")
         elif path.read_bytes() != data:
             errors.append(f"{path.relative_to(build.ROOT)}: stale, run ./build.py")
     for extra in sorted(build.CIRCLES.glob("*.png")):
-        if extra.name not in build.swatches(palette):
+        if extra.name not in swatches:
             errors.append(f"{extra.relative_to(build.ROOT)}: no such colour, run ./build.py")
 
     readme = build.README.read_text()

@@ -1,0 +1,7 @@
+id = "voltaic-icons"
+name = "Voltaic Icons"
+version = "0.1.0"
+schema_version = 1
+authors = ["Barry Dobson"]
+description = "File and folder icons in the Voltaic palette, dark and light."
+repository = "https://github.com/barrydobson/voltaic"

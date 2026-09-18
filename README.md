@@ -180,6 +180,11 @@ assets/palette/
   <theme files>     Generated from palette.json
 ```
 
+`zed-icons/` is the one port that carries artwork as well as colour. Its
+`src/icons/` holds 656 SVGs vendored from catppuccin/vscode-icons under MIT,
+tagged with colour names rather than hexes, which `build.py` resolves against
+the palette.
+
 Edit `palette.json`, then run `./build.py` to regenerate everything downstream of
 it and `./check.py` to confirm the result holds. The swatch PNGs are written by
 `build.py` using nothing but the standard library, so there is no toolchain to
@@ -188,7 +193,7 @@ them and `check.py` fails if they have drifted.
 
 ## Ports
 
-Ten, each generated from `palette.json` by its own `build.py`:
+Eleven, each generated from `palette.json` by its own `build.py`:
 
 | Port | Generates | Hand-maintained original |
 | --- | --- | --- |
@@ -202,6 +207,7 @@ Ten, each generated from `palette.json` by its own `build.py`:
 | [starship](starship/) | `voltaic.toml` | `dotfiles/packages/starship/.config/starship/starship.toml` |
 | [vscode](vscode/) | two theme files and `package.json` | `vscode-theme-my-brand`, retired |
 | [zed](zed/) | `voltaic.json` | `dotfiles/packages/zed/.config/zed/themes/voltaic.json` |
+| [zed-icons](zed-icons/) | `icon_themes/voltaic-icons.json`, `icons/{dark,light}/` | none, new port |
 
 Each port's README covers how to install it, how its keys map to the palette, and
 where it deviates from the style guide and why.
