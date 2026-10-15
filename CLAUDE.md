@@ -36,7 +36,7 @@ Each `<app>/build.py` exposes `generate(palette) -> {filename: text}`; root
 install instructions. `docs/style-guide.md` decides which colour does which job —
 read it before writing a port.
 
-Eleven so far: `atuin` `claude` `eza` `ghostty` `herdr` `k9s` `obsidian`
+Twelve so far: `atuin` `claude` `eza` `ghostty` `herdr` `k9s` `nvim` `obsidian`
 `starship` `vscode` `zed` `zed-icons`.
 
 `zed-icons` is the odd one: it also ships artwork. `src/icons/` holds 656 SVGs

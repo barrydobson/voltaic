@@ -193,7 +193,7 @@ them and `check.py` fails if they have drifted.
 
 ## Ports
 
-Eleven, each generated from `palette.json` by its own `build.py`:
+Twelve, each generated from `palette.json` by its own `build.py`:
 
 | Port | Generates | Hand-maintained original |
 | --- | --- | --- |
@@ -203,6 +203,7 @@ Eleven, each generated from `palette.json` by its own `build.py`:
 | [ghostty](ghostty/) | `voltaic-dark`, `voltaic-light` | `dotfiles/packages/ghostty/.config/ghostty/themes/` |
 | [herdr](herdr/) | `voltaic.toml` | `dotfiles/packages/herdr/.config/herdr/config.toml` |
 | [k9s](k9s/) | `voltaic-dark.yaml`, `voltaic-light.yaml` | `dotfiles/packages/k9s/.config/k9s/skins/` |
+| [nvim](nvim/) | `colors/voltaic-dark.lua`, `colors/voltaic-light.lua` | none, new port |
 | [obsidian](obsidian/) | `theme.css`, `manifest.json` | `delta-obsidian-theme`, a separate theme |
 | [starship](starship/) | `voltaic.toml` | `dotfiles/packages/starship/.config/starship/starship.toml` |
 | [vscode](vscode/) | two theme files and `package.json` | `vscode-theme-my-brand`, retired |
