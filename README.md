@@ -193,7 +193,7 @@ them and `check.py` fails if they have drifted.
 
 ## Ports
 
-Thirteen, each generated from `palette.json` by its own `build.py`:
+Fourteen, each generated from `palette.json` by its own `build.py`:
 
 | Port | Generates | Hand-maintained original |
 | --- | --- | --- |
@@ -206,6 +206,7 @@ Thirteen, each generated from `palette.json` by its own `build.py`:
 | [k9s](k9s/) | `voltaic-dark.yaml`, `voltaic-light.yaml` | `dotfiles/packages/k9s/.config/k9s/skins/` |
 | [nvim](nvim/) | `colors/voltaic-dark.lua`, `colors/voltaic-light.lua` | none, new port |
 | [obsidian](obsidian/) | `theme.css`, `manifest.json` | `delta-obsidian-theme`, a separate theme |
+| [slack](slack/) | `README.md` (theme strings to paste) | none, new port |
 | [starship](starship/) | `voltaic.toml` | `dotfiles/packages/starship/.config/starship/starship.toml` |
 | [vscode](vscode/) | two theme files and `package.json` | `vscode-theme-my-brand`, retired |
 | [zed](zed/) | `voltaic.json` | `dotfiles/packages/zed/.config/zed/themes/voltaic.json` |
