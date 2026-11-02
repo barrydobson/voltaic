@@ -193,12 +193,13 @@ them and `check.py` fails if they have drifted.
 
 ## Ports
 
-Fourteen, each generated from `palette.json` by its own `build.py`:
+Fifteen, each generated from `palette.json` by its own `build.py`:
 
 | Port | Generates | Hand-maintained original |
 | --- | --- | --- |
 | [atuin](atuin/) | `voltaic-dark.toml`, `voltaic-light.toml` | none, new port |
 | [claude](claude/) | `voltaic-dark.json`, `voltaic-light.json` | `dotfiles/packages/claude/.claude/themes/` |
+| [codex](codex/) | `voltaic-dark.tmTheme`, `voltaic-light.tmTheme` | none, new port |
 | [eza](eza/) | `voltaic-dark.yml`, `voltaic-light.yml` | `dotfiles/packages/eza/.config/eza/theme.yml` |
 | [ghostty](ghostty/) | `voltaic-dark`, `voltaic-light` | `dotfiles/packages/ghostty/.config/ghostty/themes/` |
 | [herdr](herdr/) | `voltaic.toml` | `dotfiles/packages/herdr/.config/herdr/config.toml` |
