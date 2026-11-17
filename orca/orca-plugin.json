@@ -1,0 +1,40 @@
+{
+  "manifestVersion": 2,
+  "id": "voltaic-theme",
+  "name": "Voltaic",
+  "version": "1.0.0",
+  "execution": "data",
+  "description": "Voltaic dark and light app themes, with matching code and terminal colours.",
+  "license": "MIT",
+  "repository": "https://github.com/barrydobson/voltaic/tree/main/orca",
+  "engines": {
+    "orca": ">=1.4.246"
+  },
+  "contributes": {
+    "themes": [
+      {
+        "id": "voltaic-dark",
+        "title": "Voltaic Dark",
+        "path": "themes/voltaic-dark.json"
+      },
+      {
+        "id": "voltaic-light",
+        "title": "Voltaic Light",
+        "path": "themes/voltaic-light.json"
+      }
+    ],
+    "terminalThemes": [
+      {
+        "id": "voltaic-dark",
+        "title": "Voltaic Dark",
+        "path": "terminal/voltaic-dark.json"
+      },
+      {
+        "id": "voltaic-light",
+        "title": "Voltaic Light",
+        "path": "terminal/voltaic-light.json"
+      }
+    ]
+  },
+  "capabilities": []
+}
